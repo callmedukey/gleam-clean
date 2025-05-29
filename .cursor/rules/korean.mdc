@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Use Korean for all the text in the code output. Including error, success messages.
+Code Comments can be in ENGLISH.
