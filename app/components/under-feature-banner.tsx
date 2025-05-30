@@ -10,7 +10,7 @@ function UnderFeatureBanner() {
       viewport={{ once: true, margin: "-100px" }}
     >
       <motion.h2
-        className="text-primary font-bold text-2xl sm:text-3xl lg:text-4xl leading-[1.6] text-center max-w-4xl"
+        className="text-secondary font-bold text-2xl sm:text-3xl lg:text-4xl leading-[1.6] text-center max-w-4xl"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -19,7 +19,7 @@ function UnderFeatureBanner() {
         고객이 기대하는 것 이상의 완벽한 서비스
       </motion.h2>
       <motion.p
-        className="text-slate-700 font-semibold text-base sm:text-lg leading-[1.6] text-center max-w-4xl"
+        className="text-text-primary font-semibold text-base sm:text-lg leading-[1.6] text-center max-w-4xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
