@@ -51,7 +51,7 @@ const BeforeAfterSection = () => {
                 </p>
               </div>
             </div>
-            <div className="bg-gray-100 rounded-tl-none rounded-tr-[1.4375rem] rounded-bl-[1.4375rem] rounded-br-[1.4375rem] p-8 shadow-lg flex-1 min-h-[12rem] flex items-center sm:-translate-x-8 mt-8 order-2 sm:order-2">
+            <div className="bg-gray-100 rounded-tl-none rounded-tr-[1.4375rem] rounded-bl-[1.4375rem] rounded-br-[1.4375rem] p-8 shadow-lg flex-1 min-h-[12rem] flex items-center sm:-translate-x-8 mt-8 order-2 sm:order-2 lg:translate-y-6">
               <p className="text-[#2D3E50] font-semibold text-xl leading-[1.6] text-center break-keep">
                 와..너무 꼼꼼히 친절하게 잘해주세요 ㅠㅠ 새거랑 다름없이 너무
                 행복합니다!!
@@ -70,7 +70,7 @@ const BeforeAfterSection = () => {
         >
           {/* Review for After */}
           <div className="flex flex-col sm:flex-row items-center gap-8 w-full order-1">
-            <div className="bg-gray-100 rounded-tl-[1.4375rem] rounded-tr-none rounded-bl-[1.4375rem] rounded-br-[1.4375rem] p-8 shadow-lg flex-1 flex items-center mt-12 order-2 sm:order-1">
+            <div className="bg-gray-100 rounded-tl-[1.4375rem] rounded-tr-none rounded-bl-[1.4375rem] rounded-br-[1.4375rem] p-8 shadow-lg flex-1 flex items-center mt-12 order-2 sm:order-1 lg:translate-y-6">
               <p className="text-text-primary font-semibold text-xl leading-[1.6] text-center break-keep">
                 솔직히 이정도까지 깨끗해질거라고는 기대 안했는데 그냥 새쇼파가
                 되어버렸습니다...!
@@ -93,7 +93,7 @@ const BeforeAfterSection = () => {
           </div>
 
           {/* After Image */}
-          <div className="relative w-full max-w-[35.375rem] h-[50rem] rounded-lg overflow-hidden lg:-translate-x-6 order-2">
+          <div className="relative w-full max-w-[35.375rem] h-[50rem] rounded-lg overflow-hidden lg:-translate-x-6 order-2 lg:mt-6">
             <Image
               src={afterImage}
               alt="청소 후 상태"

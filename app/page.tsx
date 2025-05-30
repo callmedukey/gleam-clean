@@ -1,8 +1,10 @@
 import BeforeAfterSection from "./components/before-after-section";
 import FeaturesSection from "./components/features-section";
+import KeyFeaturesSection from "./components/key-features-section";
 import UnderFeatureBanner from "./components/under-feature-banner";
 import UnderHeroBanner from "./components/under-hero-banner";
 import HeroSection from "@/app/components/hero-section";
+import WhyGleamSection from "./components/why-gleam-section";
 
 export const dynamic = "force-static";
 
@@ -14,6 +16,8 @@ export default async function Home() {
       <FeaturesSection />
       <UnderFeatureBanner />
       <BeforeAfterSection />
+      <KeyFeaturesSection />
+      <WhyGleamSection />
     </main>
   );
 }
