@@ -9,8 +9,8 @@ import FooterLegalLinks from "./footer-legal-links";
 
 const Footer = () => {
   return (
-    <footer className="px-4 py-8 sm:px-8 sm:py-12 lg:px-20 lg:py-16 **:break-keep">
-      <div className="max-w-7xl mx-auto">
+    <footer className="px-4 py-8 sm:px-8 sm:py-12 lg:px-20 lg:py-16 **:break-keep bg-primary-foreground">
+      <div className="max-w-screen-2xl mx-auto">
         {/* Main Footer Content */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-16 mb-8">
           {/* Logo and Company Info */}

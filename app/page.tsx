@@ -1,12 +1,15 @@
-import { auth } from "@/auth";
-import LoginForm from "@/components/auth/login-form";
+import FeaturesSection from "./components/features-section";
+import UnderHeroBanner from "./components/under-hero-banner";
+import HeroSection from "@/app/components/hero-section";
+
+export const dynamic = "force-static";
 
 export default async function Home() {
-  const session = await auth();
-  console.log("from home", session);
   return (
-    <main className="flex items-center justify-center min-h-screen">
-      <LoginForm />
+    <main className="min-h-screen">
+      <HeroSection />
+      <UnderHeroBanner />
+      <FeaturesSection />
     </main>
   );
 }

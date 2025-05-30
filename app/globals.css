@@ -89,6 +89,11 @@
   --spacing-icon: 1.5rem; /* 24px converted to rem */
   --spacing-btn-text: 3rem; /* 48px converted to rem */
 
+  /* Hero section specific spacing */
+  --spacing-15: 3.75rem; /* 60px for icon containers */
+  --spacing-12: 3rem; /* 48px for icons */
+  --spacing-26: 6.5rem; /* 104px for service item width */
+
   --leading-text: 1.6;
   --radius-btn: 50px; /* Keep as px for pill buttons */
   --shadow-header: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);

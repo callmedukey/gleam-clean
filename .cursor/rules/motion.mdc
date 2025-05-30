@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Use Context7 to refer to latest motion.dev docs and apply them only when asked to apply animations.
