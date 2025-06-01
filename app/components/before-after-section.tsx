@@ -1,8 +1,9 @@
-import React from "react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import beforeImage from "@/public/images/before-image.png";
+import React from "react";
+
 import afterImage from "@/public/images/after-image.png";
+import beforeImage from "@/public/images/before-image.png";
 import userAvatar1 from "@/public/images/user-avatar-1.png";
 import userAvatar2 from "@/public/images/user-avatar-2.png";
 

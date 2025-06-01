@@ -1,6 +1,7 @@
-import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
 import React from "react";
+
+import { signIn } from "@/auth";
 
 const LoginForm = () => {
   return (

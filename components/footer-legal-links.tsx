@@ -32,7 +32,7 @@ const FooterLegalLinks = () => {
               </p>
               <h3 className="text-lg font-semibold mb-2">제1조 (목적)</h3>
               <p className="mb-4">
-                이 약관은 글림케어(이하 "회사")가 제공하는 서비스의 이용조건 및
+                이 약관은 글림케어(이하 &quot;회사&quot;)가 제공하는 서비스의 이용조건 및
                 절차, 회사와 이용자의 권리, 의무, 책임사항과 기타 필요한 사항을
                 규정함을 목적으로 합니다.
               </p>

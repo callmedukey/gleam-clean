@@ -1,8 +1,9 @@
-import React from "react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import whyGleamBg from "@/public/images/why-gleam-bg-correct.png";
+import React from "react";
+
 import arrowIcon from "@/public/images/arrow-icon.svg";
+import whyGleamBg from "@/public/images/why-gleam-bg-correct.png";
 
 const WhyGleamSection = () => {
   const features = [

@@ -2,8 +2,9 @@
 
 import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
-import LogoImage from "@/public/images/logo.png";
 import Link from "next/link";
+import { useState } from "react";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,8 +18,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import LogoImage from "@/public/images/logo.png";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="w-full bg-white shadow-header">
       <div className="flex items-center justify-between px-header py-header-y">
@@ -30,7 +33,7 @@ export default function Header() {
         {/* Desktop Navigation Menu */}
         <nav className="hidden lg:flex items-center gap-0">
           {/* 서비스 안내 - Dropdown */}
-          <DropdownMenu>
+          <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-nav px-nav-x py-nav-y rounded text-text-primary font-normal text-base leading-text hover:bg-gray-50 transition-colors w-nav-service justify-center">
                 <span className="w-nav-service-text text-center">
@@ -41,17 +44,29 @@ export default function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-48">
               <DropdownMenuItem>
-                <Link href="/services/mattress-sofa" className="w-full">
+                <Link
+                  href="/mattress-sofa"
+                  className="w-full hover:text-white transition-colors duration-100"
+                  onClick={() => setIsOpen(false)}
+                >
                   매트리스와 소파 청소
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="/services/air-conditioner" className="w-full">
+                <Link
+                  href="/services/air-conditioner"
+                  className="w-full hover:text-white transition-colors duration-100"
+                  onClick={() => setIsOpen(false)}
+                >
                   에어컨 청소
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="/services/entry-cleaning" className="w-full">
+                <Link
+                  href="/services/entry-cleaning"
+                  className="w-full hover:text-white transition-colors duration-100"
+                  onClick={() => setIsOpen(false)}
+                >
                   입주 청소
                 </Link>
               </DropdownMenuItem>

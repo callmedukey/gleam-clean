@@ -1,9 +1,10 @@
-import React from "react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import onlineBookingIcon from "@/public/icons/online-booking.svg";
+import React from "react";
+
 import cleaningServiceIcon from "@/public/icons/cleaning-service.svg";
 import customerCareIcon from "@/public/icons/customer-care.svg";
+import onlineBookingIcon from "@/public/icons/online-booking.svg";
 
 const KeyFeaturesSection = () => {
   const features = [

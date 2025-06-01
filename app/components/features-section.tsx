@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
 import * as motion from "motion/react-client";
+import Image from "next/image";
+import React from "react";
 
 // Import background images
 import feature1Bg from "@/public/images/features/feature-1-bg.png";

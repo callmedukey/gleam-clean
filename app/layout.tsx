@@ -1,10 +1,11 @@
+import { StagewiseToolbar } from "@stagewise/toolbar-next";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
-import Header from "@/components/header";
-import { StagewiseToolbar } from "@stagewise/toolbar-next";
+
 import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 const stagewiseConfig = {
   plugins: [],

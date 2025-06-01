@@ -1,9 +1,9 @@
-import Image from "next/image";
-import LogoImage from "@/public/images/logo-icon.png";
-import ArrowRight from "@/public/images/icons/arrow-right.svg";
-import HeroImage from "@/public/images/hero-main.png";
-
 import * as motion from "motion/react-client";
+import Image from "next/image";
+
+import HeroImage from "@/public/images/hero-main.png";
+import ArrowRight from "@/public/images/icons/arrow-right.svg";
+import LogoImage from "@/public/images/logo-icon.png";
 
 export default function HeroSection() {
   return (

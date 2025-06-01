@@ -1,10 +1,12 @@
-import Image from "next/image";
 import { Phone } from "lucide-react";
-import LogoFooter from "@/public/images/logo-footer.png";
+import Image from "next/image";
+import Link from "next/link";
+
 import BlogIcon from "@/public/icons/jt-naver-blog.svg";
 import KakaoIcon from "@/public/icons/sns_kakao.svg";
 import YoutubeIcon from "@/public/icons/sns_youtube.svg";
-import Link from "next/link";
+import LogoFooter from "@/public/images/logo-footer.png";
+
 import FooterLegalLinks from "./footer-legal-links";
 
 const Footer = () => {
