@@ -116,28 +116,28 @@ const CleaningStepsSection = () => {
 
   return (
     <motion.section
-      className="w-full py-16 px-4 bg-white"
+      className="w-full pt-16 px-4 bg-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, margin: "-100px" }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto border-b border-accent pb-16">
         {/* Header Section */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-16 border-t border-accent pt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-primary font-bold text-3xl lg:text-4xl leading-[1.6] mb-2">
+          <h2 className="text-secondary font-bold text-3xl lg:text-4xl leading-[1.6] mb-8">
             총 5단계로 이루어지는 완성도 높은 클리닝
           </h2>
-          <p className="text-text-primary font-semibold text-lg lg:text-xl leading-[1.6] mb-4">
+          <p className="text-text-primary font-semibold text-lg lg:text-xl leading-[1.6] mb-2">
             보이지 않는 곳까지, 최고의 전문장비로 박테리아를 완벽하게 제거
           </p>
-          <p className="text-text-primary text-base leading-[1.6] max-w-4xl mx-auto">
+          <p className="text-text-primary text-base leading-[1.6] max-w-4xl">
             클리닝 순서는 [건식 케어 - 친환경 세제 도포 - 스팀 케어 - 습식 케어
             - 살균 소독]으로 총 5단계로 진행됩니다.
           </p>
