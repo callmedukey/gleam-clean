@@ -61,7 +61,7 @@ const PricingTable = ({
         transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <table className="w-full min-w-fit border-collapse border-t-2 border-l-0 border-r-0 border-primary">
+        <table className="w-full min-w-fit border-collapse border-t-2 border-l-0 border-r-0 border-secondary">
           <thead>
             <tr className="bg-brand-card-blue border-b-2 border-primary">
               <th className="min-w-[7.5rem] sm:min-w-[10.625rem] p-3 sm:p-4 text-center text-sm sm:text-lg font-semibold text-black">

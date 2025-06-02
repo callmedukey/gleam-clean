@@ -189,7 +189,7 @@ const ProcessSection = () => {
 
   return (
     <motion.section
-      className="w-full max-w-[73.125rem] mx-auto px-4 py-8 sm:py-16"
+      className="w-full max-w-[73.125rem] mx-auto px-4 py-8 sm:py-16 mt-4 sm:mt-8"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}

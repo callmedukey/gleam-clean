@@ -24,9 +24,8 @@ const MatressHeroSection = () => {
         <Image
           src={mattressHeroBg}
           alt="매트리스 케어 서비스"
-          width={830}
-          height={328}
           className="rounded-lg"
+          quality={100}
           priority
         />
       </motion.div>
@@ -34,7 +33,7 @@ const MatressHeroSection = () => {
       {/* Text Content */}
       <div className="flex flex-col items-center gap-6 max-w-4xl text-center">
         <motion.h1
-          className="text-[2.488rem] font-bold leading-[1.6] text-text-primary break-keep"
+          className="text-4xl font-bold leading-[1.6] text-text-primary break-keep"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}

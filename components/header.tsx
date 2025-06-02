@@ -54,7 +54,7 @@ export default function Header() {
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link
-                  href="/services/air-conditioner"
+                  href="/air-conditioner"
                   className="w-full hover:text-white transition-colors duration-100"
                   onClick={() => setIsOpen(false)}
                 >
@@ -63,7 +63,7 @@ export default function Header() {
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link
-                  href="/services/entry-cleaning"
+                  href="/entry-cleaning"
                   className="w-full hover:text-white transition-colors duration-100"
                   onClick={() => setIsOpen(false)}
                 >
