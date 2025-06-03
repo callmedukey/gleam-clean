@@ -3,6 +3,7 @@
 import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import {
@@ -22,6 +23,11 @@ import LogoImage from "@/public/images/logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Helper function to check if a link is active
+  const isActiveLink = (href: string) => pathname === href;
+
   return (
     <header className="w-full bg-white shadow-header">
       <div className="flex items-center justify-between px-header py-header-y">
@@ -46,7 +52,9 @@ export default function Header() {
               <DropdownMenuItem>
                 <Link
                   href="/mattress-sofa"
-                  className="w-full hover:text-white transition-colors duration-100"
+                  className={`w-full hover:text-white transition-colors duration-100 ${
+                    isActiveLink("/mattress-sofa") ? "text-primary" : ""
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   매트리스와 소파 청소
@@ -55,7 +63,9 @@ export default function Header() {
               <DropdownMenuItem>
                 <Link
                   href="/air-conditioner"
-                  className="w-full hover:text-white transition-colors duration-100"
+                  className={`w-full hover:text-white transition-colors duration-100 ${
+                    isActiveLink("/air-conditioner") ? "text-primary" : ""
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   에어컨 청소
@@ -64,7 +74,9 @@ export default function Header() {
               <DropdownMenuItem>
                 <Link
                   href="/entry-cleaning"
-                  className="w-full hover:text-white transition-colors duration-100"
+                  className={`w-full hover:text-white transition-colors duration-100 ${
+                    isActiveLink("/entry-cleaning") ? "text-primary" : ""
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   입주 청소
@@ -75,7 +87,15 @@ export default function Header() {
 
           {/* 서비스 신청 */}
           <button className="flex items-center gap-nav px-nav-x py-nav-y rounded text-text-primary font-normal text-base leading-text hover:bg-gray-50 transition-colors w-nav-default justify-center">
-            <span className="text-center">서비스 신청</span>
+            <Link href="/apply-service">
+              <span
+                className={`text-center ${
+                  isActiveLink("/apply-service") ? "text-primary" : ""
+                }`}
+              >
+                서비스 신청
+              </span>
+            </Link>
           </button>
 
           {/* 최신 소식 */}
@@ -124,20 +144,32 @@ export default function Header() {
                 </h3>
                 <div className="pl-4 space-y-2">
                   <Link
-                    href="/services/mattress-sofa"
-                    className="block py-2 text-sm text-text-primary hover:text-secondary transition-colors"
+                    href="/mattress-sofa"
+                    className={`block py-2 text-sm hover:text-secondary transition-colors ${
+                      isActiveLink("/mattress-sofa")
+                        ? "text-primary"
+                        : "text-text-primary"
+                    }`}
                   >
                     매트리스와 소파 청소
                   </Link>
                   <Link
-                    href="/services/air-conditioner"
-                    className="block py-2 text-sm text-text-primary hover:text-secondary transition-colors"
+                    href="/air-conditioner"
+                    className={`block py-2 text-sm hover:text-secondary transition-colors ${
+                      isActiveLink("/air-conditioner")
+                        ? "text-primary"
+                        : "text-text-primary"
+                    }`}
                   >
                     에어컨 청소
                   </Link>
                   <Link
-                    href="/services/entry-cleaning"
-                    className="block py-2 text-sm text-text-primary hover:text-secondary transition-colors"
+                    href="/entry-cleaning"
+                    className={`block py-2 text-sm hover:text-secondary transition-colors ${
+                      isActiveLink("/entry-cleaning")
+                        ? "text-primary"
+                        : "text-text-primary"
+                    }`}
                   >
                     입주 청소
                   </Link>
@@ -146,20 +178,30 @@ export default function Header() {
 
               {/* 기타 메뉴 항목들 */}
               <Link
-                href="/apply"
-                className="block py-3 text-base text-text-primary hover:text-secondary transition-colors border-b border-gray-100"
+                href="/apply-service"
+                className={`block py-3 text-base hover:text-secondary transition-colors border-b border-gray-100 ${
+                  isActiveLink("/apply-service")
+                    ? "text-primary"
+                    : "text-text-primary"
+                }`}
               >
                 서비스 신청
               </Link>
               <Link
                 href="/news"
-                className="block py-3 text-base text-text-primary hover:text-secondary transition-colors border-b border-gray-100"
+                className={`block py-3 text-base hover:text-secondary transition-colors border-b border-gray-100 ${
+                  isActiveLink("/news") ? "text-primary" : "text-text-primary"
+                }`}
               >
                 최신 소식
               </Link>
               <Link
                 href="/contact"
-                className="block py-3 text-base text-text-primary hover:text-secondary transition-colors border-b border-gray-100"
+                className={`block py-3 text-base hover:text-secondary transition-colors border-b border-gray-100 ${
+                  isActiveLink("/contact")
+                    ? "text-primary"
+                    : "text-text-primary"
+                }`}
               >
                 교육 문의
               </Link>
