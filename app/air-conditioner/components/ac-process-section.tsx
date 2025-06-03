@@ -6,6 +6,7 @@ import Image from "next/image";
 import React from "react";
 
 // Import icons
+import arrowRightIcon from "@/public/icons/common-arrow-right.svg";
 import assemblyIcon from "@/public/images/ac-process/assembly-icon.svg";
 import cleanupIcon from "@/public/images/ac-process/cleanup-icon.svg";
 import dryingIcon from "@/public/images/ac-process/drying-icon.svg";
@@ -14,7 +15,6 @@ import operationCheckIcon from "@/public/images/ac-process/operation-check-icon.
 import powerWashingIcon from "@/public/images/ac-process/power-washing-icon.svg";
 import sprayIcon from "@/public/images/ac-process/spray-icon.svg";
 import statusCheckIcon from "@/public/images/ac-process/status-check-icon.svg";
-import arrowRightIcon from "@/public/images/icons/arrow-right.svg";
 
 interface ProcessStep {
   number: string;
@@ -166,16 +166,9 @@ const ACProcessSection = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, margin: "-100px" }}
     >
-      {/* Add styles for gradient color */}
-      <style jsx global>{`
-        .text-gradient-blue-middle {
-          color: #126bb0;
-        }
-      `}</style>
-
       {/* Page break line */}
       <motion.div
-        className="w-full h-0 border-t border-[#1E93D3]"
+        className="w-full h-0 border-t border-accent"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -186,7 +179,7 @@ const ACProcessSection = () => {
       <div className="flex flex-col items-center gap-[4.375rem]">
         {/* Title */}
         <motion.h2
-          className="text-[#166DA3] font-bold text-2xl sm:text-3xl lg:text-4xl leading-[1.6] text-center break-keep"
+          className="text-secondary font-bold text-2xl sm:text-3xl lg:text-4xl leading-[1.6] text-center break-keep"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -196,7 +189,9 @@ const ACProcessSection = () => {
         </motion.h2>
 
         {/* Add CSS for ordering */}
-        <style dangerouslySetInnerHTML={{ __html: generateOrderCSS() }} />
+        <style jsx>{`
+          ${generateOrderCSS()}
+        `}</style>
 
         {/* Process steps grid */}
         <motion.div
@@ -291,13 +286,13 @@ const ACProcessSection = () => {
                 <div className="bg-[#F4FAFD] rounded-[1.4375rem] p-6 sm:p-8 flex flex-col gap-4 sm:gap-6 min-h-[16rem] sm:min-h-[19.25rem]">
                   {/* Step number with gradient border */}
                   <motion.div
-                    className="flex flex-col justify-center items-center gap-2 p-2 w-[2.6875rem] h-auto relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-[#1E92D2] before:via-[#126BB0] before:to-[#144894]"
+                    className="flex flex-col justify-center items-center gap-2 p-2 w-[2.6875rem] h-auto relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-gradient-blue-start before:via-gradient-blue-middle before:to-gradient-blue-end"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
                     viewport={{ once: true }}
                   >
-                    <span className="text-[#166DA3] font-bold text-lg sm:text-xl leading-[1.6] text-center">
+                    <span className="text-secondary font-bold text-lg sm:text-xl leading-[1.6] text-center">
                       {step.number}
                     </span>
                   </motion.div>
@@ -326,10 +321,10 @@ const ACProcessSection = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
                     viewport={{ once: true }}
                   >
-                    <h3 className="text-[#166DA3] font-bold text-lg sm:text-xl leading-[1.6]">
+                    <h3 className="text-secondary font-bold text-lg sm:text-xl leading-[1.6]">
                       {step.title}
                     </h3>
-                    <p className="text-[#2D3E50] text-xs sm:text-sm leading-[1.6]">
+                    <p className="text-text-secondary text-xs sm:text-sm leading-[1.6]">
                       {step.description}
                     </p>
                   </motion.div>
@@ -471,7 +466,7 @@ const ACProcessSection = () => {
 
         {/* CTA Button */}
         <motion.button
-          className="bg-[#1E93D3] hover:bg-[#166DA3] text-white font-bold text-base rounded-[3.125rem] px-6 py-2 flex items-center justify-center gap-4 sm:gap-6 transition-colors"
+          className="bg-accent hover:bg-accent/80 text-white font-bold text-base rounded-[3.125rem] px-6 py-2 flex items-center justify-center gap-4 sm:gap-6 transition-colors"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           whileHover={{

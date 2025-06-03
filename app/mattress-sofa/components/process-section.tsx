@@ -6,7 +6,7 @@ import Image from "next/image";
 import React from "react";
 
 // Import process step icons
-import arrowRightIcon from "@/public/images/icons/arrow-right.svg";
+import arrowRightIcon from "@/public/icons/common-arrow-right.svg";
 import brushIcon from "@/public/images/process/brush-icon.svg";
 import cleaningLiquidIcon from "@/public/images/process/cleaning-liquid-icon.svg";
 import leafIcon from "@/public/images/process/leaf-icon.svg";
