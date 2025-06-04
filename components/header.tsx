@@ -100,12 +100,26 @@ export default function Header() {
 
           {/* 최신 소식 */}
           <button className="flex items-center gap-nav px-nav-x py-nav-y rounded text-text-primary font-normal text-base leading-text hover:bg-gray-50 transition-colors w-nav-default justify-center">
-            <span className="text-center">최신 소식</span>
+            <Link
+              href="/blog"
+              className={`text-center ${
+                isActiveLink("/blog") ? "text-primary" : ""
+              }`}
+            >
+              최신 소식
+            </Link>
           </button>
 
           {/* 교육 문의 */}
           <button className="flex items-center gap-nav px-nav-x py-nav-y rounded text-text-primary font-normal text-base leading-text hover:bg-gray-50 transition-colors">
-            <span className="text-center">교육 문의</span>
+            <Link
+              href="/education-inquiry"
+              className={`text-center ${
+                isActiveLink("/education-inquiry") ? "text-primary" : ""
+              }`}
+            >
+              교육 문의
+            </Link>
           </button>
 
           {/* Action Buttons */}

@@ -54,7 +54,7 @@ function ServiceCard({
 
   return (
     <motion.div
-      className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-20 w-full"
+      className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8 xl:gap-12 2xl:gap-20 w-full"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{
@@ -66,7 +66,7 @@ function ServiceCard({
     >
       {/* Background Image */}
       <motion.div
-        className="w-full lg:w-[40.625rem] flex-shrink-0"
+        className="w-full lg:w-1/2 xl:w-[45%] 2xl:w-[40.625rem] flex-shrink-0"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{
@@ -79,13 +79,13 @@ function ServiceCard({
         <Image
           src={backgroundImage}
           alt={title}
-          className="w-full h-[16rem] sm:h-[20rem] lg:h-[25.5rem] rounded-lg object-cover"
+          className="w-full h-[16rem] sm:h-[20rem] lg:h-[22rem] xl:h-[24rem] 2xl:h-[25.5rem] rounded-lg object-cover"
         />
       </motion.div>
 
       {/* Content */}
       <motion.div
-        className="flex flex-col gap-4 lg:gap-5 w-full lg:w-[29.625rem] flex-shrink-0"
+        className="flex flex-col gap-4 lg:gap-5 w-full lg:w-1/2 xl:w-[55%] 2xl:w-[29.625rem] lg:flex-shrink-0"
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{
@@ -153,7 +153,7 @@ function ServiceCard({
         <div className="flex flex-col gap-6 lg:gap-8">
           {/* Service Icons */}
           <motion.div
-            className="grid grid-cols-2 sm:flex sm:flex-wrap lg:flex-nowrap gap-4 sm:gap-6 lg:gap-8"
+            className="grid grid-cols-2 sm:flex sm:flex-wrap lg:flex-nowrap gap-4 sm:gap-6 lg:gap-6 xl:gap-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -195,7 +195,7 @@ function ServiceCard({
 
           {/* Features List */}
           <motion.div
-            className="flex flex-col gap-3 sm:gap-4 w-full lg:w-[24.688rem]"
+            className="flex flex-col gap-3 sm:gap-4 w-full"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
