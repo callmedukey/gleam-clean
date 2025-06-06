@@ -20,12 +20,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.8.2
- * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
+ * Prisma Client JS version: 6.9.0
+ * Query Engine version: 81e4af48011447c3cc503a190e86995b66d2a28e
  */
 Prisma.prismaVersion = {
-  client: "6.8.2",
-  engine: "2060c79ba17c6bb9f5823312b6f6b7f4a845738e"
+  client: "6.9.0",
+  engine: "81e4af48011447c3cc503a190e86995b66d2a28e"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -120,6 +120,51 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.InquiryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  message: 'message',
+  type: 'type',
+  read: 'read',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.OfficeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  address: 'address',
+  phone: 'phone',
+  hours: 'hours',
+  mapUrl: 'mapUrl',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  width: 'width',
+  height: 'height',
+  inquiryId: 'inquiryId',
+  blogPostId: 'blogPostId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.BlogPostScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  badge: 'badge',
+  content: 'content',
+  published: 'published',
+  url: 'url',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
@@ -177,12 +222,22 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
+exports.InquiryType = exports.$Enums.InquiryType = {
+  QUOTE: 'QUOTE',
+  OTHER: 'OTHER',
+  EDUCATION: 'EDUCATION'
+};
+
 exports.Role = exports.$Enums.Role = {
   USER: 'USER',
   ADMIN: 'ADMIN'
 };
 
 exports.Prisma.ModelName = {
+  Inquiry: 'Inquiry',
+  Office: 'Office',
+  Image: 'Image',
+  BlogPost: 'BlogPost',
   User: 'User',
   Account: 'Account',
   Session: 'Session',

@@ -7,7 +7,7 @@ import educationBannerImage from "@/public/images/education-banner-image.png";
 const EducationBannerSection = () => {
   return (
     <motion.section
-      className="bg-accent py-16 my-24"
+      className="bg-accent py-12 my-24"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}

@@ -1,0 +1,66 @@
+enum InquiryType {
+  QUOTE
+  OTHER
+  EDUCATION
+}
+
+model Inquiry {
+  id      String @id @default(cuid())
+  name    String
+  email   String
+  phone   String
+  message String
+
+  type InquiryType @default(OTHER)
+
+  read Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  images Image[]
+}
+
+model Office {
+  id        String   @id @default(cuid())
+  name      String
+  address   String
+  phone     String
+  hours     String
+  mapUrl    String
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Image {
+  id String @id @default(cuid())
+
+  url    String
+  width  Int
+  height Int
+
+  inquiry   Inquiry? @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
+  inquiryId String?
+
+  blogPostId String?
+  blogPost   BlogPost? @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BlogPost {
+  id      String @id @default(cuid())
+  title   String
+  badge   String
+  content String
+
+  published Boolean @default(false)
+
+  url    String
+  images Image[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

@@ -130,19 +130,29 @@ const ACProcessSection = () => {
   const stepsForDesktop = reorderForZigzag(processSteps, 3);
   const stepsForLarge = reorderForZigzag(processSteps, 4);
 
+  // Debug logging
+  console.log(
+    "2-column zigzag order:",
+    stepsForTablet.map((s) => s.number).join(", ")
+  );
+  console.log(
+    "4-column zigzag order:",
+    stepsForLarge.map((s) => s.number).join(", ")
+  );
+
   // Generate CSS for ordering
   const generateOrderCSS = () => {
     let css = "";
 
-    // Tablet (2 columns) - sm to md
-    css += "@media (min-width: 640px) and (max-width: 767px) {\n";
+    // Tablet (2 columns) - sm to lg
+    css += "@media (min-width: 640px) and (max-width: 1023px) {\n";
     stepsForTablet.forEach((step, index) => {
       css += `  .process-step-${step.number} { order: ${index}; }\n`;
     });
     css += "}\n";
 
-    // Desktop (3 columns) - md to xl
-    css += "@media (min-width: 768px) and (max-width: 1279px) {\n";
+    // Desktop (3 columns) - lg to xl
+    css += "@media (min-width: 1024px) and (max-width: 1279px) {\n";
     stepsForDesktop.forEach((step, index) => {
       css += `  .process-step-${step.number} { order: ${index}; }\n`;
     });
@@ -189,13 +199,11 @@ const ACProcessSection = () => {
         </motion.h2>
 
         {/* Add CSS for ordering */}
-        <style jsx>{`
-          ${generateOrderCSS()}
-        `}</style>
+        <style dangerouslySetInnerHTML={{ __html: generateOrderCSS() }} />
 
         {/* Process steps grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-9 xl:gap-x-9 xl:gap-y-9"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-9 xl:gap-x-9 xl:gap-y-9"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -231,9 +239,12 @@ const ACProcessSection = () => {
               const isFirstInRow = posInRow === 1;
               const reversed = row % 2 === 0;
 
-              // Check if this is the last step (step 8) - never show arrows for it
+              // Check if this is step 08 (the last step in the process sequence)
               const stepNum = parseInt(step.number);
-              if (stepNum === totalItems) {
+              const isLastStep = stepNum === 8;
+
+              // Never show arrows for step 08 (last step in sequence)
+              if (isLastStep) {
                 return {
                   showRight: false,
                   showLeft: false,
@@ -272,6 +283,26 @@ const ACProcessSection = () => {
               lg: getArrowLogic(3, displayIndex.lg),
               xl: getArrowLogic(4, displayIndex.xl),
             };
+
+            // Debug logging for 4-column layout
+            if (step.number === "06" || step.number === "05") {
+              console.log(`[4-col] Step ${step.number}:`, {
+                visualPosition: displayIndex.xl,
+                row: getRow(4, displayIndex.xl),
+                posInRow: getPositionInRow(4, displayIndex.xl),
+                arrows: arrows.xl,
+              });
+            }
+
+            // Debug logging for 2-column layout
+            if (step.number === "07" || step.number === "08") {
+              console.log(`[2-col] Step ${step.number}:`, {
+                visualPosition: displayIndex.sm,
+                row: getRow(2, displayIndex.sm),
+                posInRow: getPositionInRow(2, displayIndex.sm),
+                arrows: arrows.sm,
+              });
+            }
 
             return (
               <motion.div
@@ -346,7 +377,7 @@ const ACProcessSection = () => {
                   )}
                   {arrows.sm.showRight && (
                     <motion.div
-                      className="absolute top-1/2 -right-[1.3rem] transform -translate-y-1/2 z-10 hidden sm:block md:hidden"
+                      className="absolute top-1/2 -right-[1.3rem] transform -translate-y-1/2 z-10 hidden sm:block lg:hidden"
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}
@@ -357,7 +388,7 @@ const ACProcessSection = () => {
                   )}
                   {arrows.lg.showRight && (
                     <motion.div
-                      className="absolute top-1/2 -right-[1.7rem] transform -translate-y-1/2 z-10 hidden md:block xl:hidden"
+                      className="absolute top-1/2 -right-[1.7rem] transform -translate-y-1/2 z-10 hidden lg:block xl:hidden"
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}
@@ -381,7 +412,7 @@ const ACProcessSection = () => {
                   {/* Left arrows for reversed flow rows */}
                   {arrows.sm.showLeft && (
                     <motion.div
-                      className="absolute top-1/2 -left-[1.3rem] transform -translate-y-1/2 rotate-180 z-10 hidden sm:block md:hidden"
+                      className="absolute top-1/2 -left-[1.3rem] transform -translate-y-1/2 rotate-180 z-10 hidden sm:block lg:hidden"
                       initial={{ opacity: 0, x: 10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}
@@ -392,7 +423,7 @@ const ACProcessSection = () => {
                   )}
                   {arrows.lg.showLeft && (
                     <motion.div
-                      className="absolute top-1/2 -left-[1.7rem] transform -translate-y-1/2 rotate-180 z-10 hidden md:block xl:hidden"
+                      className="absolute top-1/2 -left-[1.7rem] transform -translate-y-1/2 rotate-180 z-10 hidden lg:block xl:hidden"
                       initial={{ opacity: 0, x: 10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}
@@ -427,7 +458,7 @@ const ACProcessSection = () => {
                   )}
                   {arrows.sm.showDown && (
                     <motion.div
-                      className="absolute -bottom-[1.3rem] left-1/2 transform -translate-x-1/2 rotate-90 z-10 hidden sm:block md:hidden"
+                      className="absolute -bottom-[1.3rem] left-1/2 transform -translate-x-1/2 rotate-90 z-10 hidden sm:block lg:hidden"
                       initial={{ opacity: 0, y: -10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}
@@ -438,7 +469,7 @@ const ACProcessSection = () => {
                   )}
                   {arrows.lg.showDown && (
                     <motion.div
-                      className="absolute -bottom-[1.7rem] left-1/2 transform -translate-x-1/2 rotate-90 z-10 hidden md:block xl:hidden"
+                      className="absolute -bottom-[1.7rem] left-1/2 transform -translate-x-1/2 rotate-90 z-10 hidden lg:block xl:hidden"
                       initial={{ opacity: 0, y: -10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}

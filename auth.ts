@@ -3,9 +3,7 @@ import { compare } from "bcryptjs";
 import NextAuth, { CredentialsSignin } from "next-auth";
 import type { DefaultSession } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import Google from "next-auth/providers/google";
-import Kakao, { Gender } from "next-auth/providers/kakao";
-import Naver from "next-auth/providers/naver";
+import { Gender } from "next-auth/providers/kakao";
 
 import { Role } from "@/prisma/generated/prisma";
 import { prisma } from "@/prisma/prisma-client";
@@ -23,7 +21,6 @@ declare module "next-auth" {
       birthday: Date;
       country: string;
       role: Role;
-      hasPaidSubscription: boolean;
     } & DefaultSession["user"];
   }
 
@@ -37,7 +34,6 @@ declare module "next-auth" {
     gender?: Gender | null;
     birthday?: Date | null;
     country?: string | null;
-    hasPaidSubscription?: boolean;
   }
 }
 
@@ -94,18 +90,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           role: user.role as Role,
         };
       },
-    }),
-    Naver({
-      clientId: process.env.NAVER_CLIENT_ID,
-      clientSecret: process.env.NAVER_CLIENT_SECRET,
-    }),
-    Kakao({
-      clientId: process.env.KAKAO_CLIENT_ID,
-      clientSecret: process.env.KAKAO_CLIENT_SECRET,
-    }),
-    Google({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
   session: {

@@ -19,6 +19,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 import LogoImage from "@/public/images/logo.png";
 
 export default function Header() {
@@ -126,7 +127,12 @@ export default function Header() {
           <div className="flex items-center gap-nav px-action-x ml-action">
             {/* 지점 찾기 - Outline Button */}
             <button className="flex items-center justify-center gap-2 px-btn-x py-btn-y rounded-btn border border-primary text-primary font-normal text-base leading-text hover:bg-primary hover:text-white transition-colors">
-              지점 찾기
+              <Link
+                href="/offices"
+                className={cn(isActiveLink("/offices") ? "text-primary" : "")}
+              >
+                지점 찾기
+              </Link>
             </button>
 
             {/* 예약 - Filled Button */}

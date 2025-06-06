@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
+import { Toaster } from "sonner";
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";
@@ -43,6 +44,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster />
         {process.env.NODE_ENV === "development" && (
           <StagewiseToolbar config={stagewiseConfig} />
         )}

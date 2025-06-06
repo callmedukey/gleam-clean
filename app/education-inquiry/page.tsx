@@ -4,6 +4,7 @@ import React from "react";
 import EducationBannerSection from "./components/education-banner-section";
 import EducationContactSection from "./components/education-contact-section";
 import EducationFeaturesSection from "./components/education-features-section";
+import EducationInquiryForm from "./components/education-inquiry-form";
 
 export const metadata = {
   title: "교육 문의",
@@ -50,6 +51,8 @@ const page = async () => {
       <EducationFeaturesSection />
       {/* Education Banner Section */}
       <EducationBannerSection />
+      {/* Education Inquiry Form */}
+      <EducationInquiryForm />
     </main>
   );
 };

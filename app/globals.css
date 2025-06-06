@@ -104,6 +104,10 @@
   --spacing-12: 3rem; /* 48px for icons */
   --spacing-26: 6.5rem; /* 104px for service item width */
 
+  /* Offices page specific spacing */
+  --spacing-11: 2.75rem; /* 44px - gap between office cards */
+  --spacing-18: 4.5rem; /* 72px - gap in office card layout */
+
   --leading-text: 1.6;
   --shadow-header: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
 }

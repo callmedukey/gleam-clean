@@ -1,6 +1,6 @@
+import * as motion from "motion/react-client";
 import Image from "next/image";
 import React from "react";
-import * as motion from "motion/react-client";
 
 // Import images
 import completeDisassemblyImg from "@/public/images/ac-features/complete-disassembly.png";
