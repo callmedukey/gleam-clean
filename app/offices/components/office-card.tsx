@@ -84,6 +84,7 @@ export const OfficeCard: React.FC<OfficeCardProps> = ({
         >
           <Link
             href={mapUrl}
+            target="_blank"
             className="inline-flex items-center gap-1 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg px-4 py-2"
           >
             <MapPinIcon className="w-6 h-6" />

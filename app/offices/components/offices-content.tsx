@@ -1,47 +1,47 @@
-"use client";
-
 import * as motion from "motion/react-client";
 import React from "react";
 
+import { getOffices } from "@/app/(admin)/admin/offices/query/offices.query";
+
 import { OfficeCard } from "./office-card";
 
-// Placeholder data - this will be replaced with actual data fetching later
-const officesData = [
-  {
-    id: 1,
-    name: "수원 본점",
-    address: "경기도 수원 권선구 금곡로 219, 리더스빌딩 709호",
-    phone: "0507-1366-9797",
-    hours: "09:00 ~ 21:00",
-    mapUrl: "/map/suwon", // Placeholder URL - replace with actual map URL
-  },
-  {
-    id: 2,
-    name: "서울점",
-    address: "서울특별시 동대문구 장한로33길 19 3층",
-    phone: "0507-1366-9797",
-    hours: "08:30 ~ 22:00",
-    mapUrl: "/map/seoul", // Placeholder URL - replace with actual map URL
-  },
-  {
-    id: 3,
-    name: "파주점",
-    address: "경기 파주시 교하로159번길 33 3층 304호-P344",
-    phone: "0507-1366-9797",
-    hours: "09:00 ~ 22:00",
-    mapUrl: "/map/paju", // Placeholder URL - replace with actual map URL
-  },
-  {
-    id: 4,
-    name: "동탄점",
-    address: "경기 화성시 동탄지성로 11 714-B74호",
-    phone: "0507-1366-9797",
-    hours: "09:00 ~ 21:00",
-    mapUrl: "/map/dongtan", // Placeholder URL - replace with actual map URL
-  },
-];
+// const officesData = [
+//   {
+//     id: 1,
+//     name: "수원 본점",
+//     address: "경기도 수원 권선구 금곡로 219, 리더스빌딩 709호",
+//     phone: "0507-1366-9797",
+//     hours: "09:00 ~ 21:00",
+//     mapUrl: "/map/suwon", // Placeholder URL - replace with actual map URL
+//   },
+//   {
+//     id: 2,
+//     name: "서울점",
+//     address: "서울특별시 동대문구 장한로33길 19 3층",
+//     phone: "0507-1366-9797",
+//     hours: "08:30 ~ 22:00",
+//     mapUrl: "/map/seoul", // Placeholder URL - replace with actual map URL
+//   },
+//   {
+//     id: 3,
+//     name: "파주점",
+//     address: "경기 파주시 교하로159번길 33 3층 304호-P344",
+//     phone: "0507-1366-9797",
+//     hours: "09:00 ~ 22:00",
+//     mapUrl: "/map/paju", // Placeholder URL - replace with actual map URL
+//   },
+//   {
+//     id: 4,
+//     name: "동탄점",
+//     address: "경기 화성시 동탄지성로 11 714-B74호",
+//     phone: "0507-1366-9797",
+//     hours: "09:00 ~ 21:00",
+//     mapUrl: "/map/dongtan", // Placeholder URL - replace with actual map URL
+//   },
+// ];
 
-export const OfficesContent: React.FC = () => {
+export const OfficesContent = async () => {
+  const offices = await getOffices();
   return (
     <motion.div
       className="py-24 px-4 sm:px-8 lg:px-20"
@@ -80,7 +80,7 @@ export const OfficesContent: React.FC = () => {
 
         {/* Offices List */}
         <div className="space-y-11">
-          {officesData.map((office, index) => (
+          {offices.map((office, index) => (
             <motion.div
               key={office.id}
               initial={{ opacity: 0, y: 50 }}
