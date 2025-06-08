@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import { cn } from "@/lib/utils";
@@ -26,6 +27,7 @@ interface ServiceCardProps {
   buttonText: string;
   buttonColor: "blue" | "green";
   backgroundImage: any;
+  buttonLink: string;
   icons: Array<{
     icon: any;
     label: string;
@@ -45,6 +47,7 @@ function ServiceCard({
   backgroundImage,
   icons,
   features,
+  buttonLink,
   index,
 }: ServiceCardProps) {
   const buttonStyles = {
@@ -127,24 +130,28 @@ function ServiceCard({
             viewport={{ once: true }}
           >
             <motion.button
-              className={cn(
-                "py-2 lg:py-1 rounded-[3.125rem] flex items-center gap-3 sm:gap-6 h-[2.5rem] sm:h-[3rem] lg:h-[3.313rem] w-full sm:w-auto",
-                buttonStyles[buttonColor]
-              )}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
             >
-              <span className="text-lg sm:text-xl lg:text-[1.44rem] font-bold">
-                {buttonText}
-              </span>
-              <div className="bg- p-1.5 sm:p-2 rounded-full flex-shrink-0">
-                <Image
-                  src={arrowRight}
-                  alt="arrow"
-                  className="sm:w-[14px] sm:h-[12px]"
-                />
-              </div>
+              <Link
+                href={buttonLink}
+                className={cn(
+                  "py-2 lg:py-1 rounded-[3.125rem] flex items-center gap-3 sm:gap-6 h-[2.5rem] sm:h-[3rem] lg:h-[3.313rem] w-full sm:w-auto",
+                  buttonStyles[buttonColor]
+                )}
+              >
+                <span className="text-lg sm:text-xl lg:text-[1.44rem] font-bold">
+                  {buttonText}
+                </span>
+                <div className="bg- p-1.5 sm:p-2 rounded-full flex-shrink-0">
+                  <Image
+                    src={arrowRight}
+                    alt="arrow"
+                    className="sm:w-[14px] sm:h-[12px]"
+                  />
+                </div>
+              </Link>
             </motion.button>
           </motion.div>
         </div>
@@ -241,6 +248,8 @@ const ApplyServiceSummary = () => {
       title: "베이직 케어",
       period: "3 개월",
       buttonText: "베이직 케어 신청",
+      buttonLink:
+        "https://smartstore.naver.com/365homecare/products/10495796237",
       buttonColor: "blue" as const,
       backgroundImage: basicCareBg,
       icons: [
@@ -268,6 +277,8 @@ const ApplyServiceSummary = () => {
       title: "프리미엄 케어",
       period: "6 개월",
       buttonText: "프리미엄 케어 신청",
+      buttonLink:
+        "https://smartstore.naver.com/365homecare/products/10495796237",
       buttonColor: "green" as const,
       backgroundImage: premiumCareBg,
       icons: [
@@ -296,6 +307,8 @@ const ApplyServiceSummary = () => {
       period: "12 개월",
       buttonText: "에어컨 청소 신청",
       buttonColor: "blue" as const,
+      buttonLink:
+        "https://smartstore.naver.com/365homecare/products/10495505565",
       backgroundImage: airConditionerBg,
       icons: [
         { icon: airConditionerIcon, label: "분해 청소" },
@@ -322,6 +335,8 @@ const ApplyServiceSummary = () => {
       period: "입주 전",
       buttonText: "입주 청소 신청",
       buttonColor: "blue" as const,
+      buttonLink:
+        "https://smartstore.naver.com/365homecare/products/10495796237",
       backgroundImage: moveInBg,
       icons: [
         { icon: sweepingIcon, label: "바닥 청소" },

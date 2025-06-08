@@ -1,12 +1,18 @@
+"use client";
+
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
+import InquiryDialog from "@/app/components/inquiry-dialog";
 import { Button } from "@/components/ui/button";
+import { InquiryType } from "@/prisma/generated/prisma";
 import arrowIcon from "@/public/images/arrow-icon.svg";
 import entryCleaningBg from "@/public/images/entry-cleaning/banner-background.png";
 
 const EntryBannerSection = () => {
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+
   return (
     <section className="relative w-full h-[31.4375rem] 2xl:h-[40rem] flex items-center justify-center overflow-hidden">
       {/* Background Image with Gradient Overlay */}
@@ -90,6 +96,7 @@ const EntryBannerSection = () => {
                 <Button
                   className="bg-accent hover:bg-secondary text-white font-bold text-lg sm:text-xl leading-text rounded-full px-btn-x py-btn-y gap-6 h-auto transition-colors"
                   size="lg"
+                  onClick={() => setIsInquiryOpen(true)}
                 >
                   <span>견적 받기</span>
                   <div className="bg-white rounded-full p-2">
@@ -107,6 +114,13 @@ const EntryBannerSection = () => {
           </div>
         </div>
       </motion.div>
+
+      {/* Inquiry Dialog */}
+      <InquiryDialog
+        open={isInquiryOpen}
+        onOpenChange={setIsInquiryOpen}
+        inquiryType={InquiryType.QUOTE}
+      />
     </section>
   );
 };

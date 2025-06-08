@@ -1,8 +1,8 @@
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-import arrowRightBlue from "@/public/images/education-features/arrow-right-blue.svg";
 import arrowRightWhite from "@/public/images/education-features/arrow-right-white.svg";
 import educationHeroBg1 from "@/public/images/education-features/education-hero-bg-1.png";
 import educationHeroBg2 from "@/public/images/education-features/education-hero-bg-2.png";
@@ -91,14 +91,18 @@ const EducationFeaturesSection = () => {
                 </div>
               </div>
             </div>
-            <button className="inline-flex items-center gap-4 bg-accent text-white px-7 py-2 rounded-full w-fit">
+            <Link
+              href="https://www.youtube.com/@%EA%B8%80%EB%A6%BC%EC%BC%80%EC%96%B4"
+              target="_blank"
+              className="inline-flex items-center gap-4 bg-accent text-white px-7 py-2 rounded-full w-fit"
+            >
               <span className="text-lg lg:text-[1.2rem] font-semibold">
                 전문 청소 과정 보기
               </span>
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                 <Image src={arrowRightWhite} alt="" width={14} height={12} />
               </div>
-            </button>
+            </Link>
           </motion.div>
 
           {/* Bottom Row - Text | Image */}
@@ -128,14 +132,14 @@ const EducationFeaturesSection = () => {
                 </div>
               </div>
             </div>
-            <button className="inline-flex items-center gap-4 bg-white text-accent py-2 rounded-full w-fit">
+            {/* <button className="inline-flex items-center gap-4 bg-white text-accent py-2 rounded-full w-fit">
               <span className="text-lg lg:text-[1.2rem] font-semibold">
                 고객 후기 보기
               </span>
               <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
                 <Image src={arrowRightBlue} alt="" width={14} height={12} />
               </div>
-            </button>
+            </button> */}
           </motion.div>
 
           {/* Bottom Right - Image */}

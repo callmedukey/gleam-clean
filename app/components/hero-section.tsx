@@ -1,11 +1,18 @@
+"use client";
+
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
+import ServiceSelectionDialog from "@/app/components/service-selection-dialog";
 import HeroImage from "@/public/images/hero-main.png";
 import ArrowRight from "@/public/images/icons/arrow-right.svg";
 import LogoImage from "@/public/images/logo-icon.png";
 
 export default function HeroSection() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <section className="w-full bg-white">
       {/* Main Hero Content */}
@@ -110,27 +117,33 @@ export default function HeroSection() {
             viewport={{ once: true }}
           >
             <motion.button
-              className="flex items-center gap-6 bg-accent text-white py-btn-y rounded-btn font-bold text-lg sm:text-xl leading-text hover:bg-secondary transition-colors sm:px-btn-x px-8"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <span>지금 신청하기</span>
-              <motion.div
-                className="bg-white rounded-full p-2"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.3 }}
+              <Link
+                href="/apply-service"
+                className="flex items-center gap-6 bg-accent text-white py-btn-y rounded-btn font-bold text-lg sm:text-xl leading-text hover:bg-secondary transition-colors sm:px-btn-x px-8"
               >
-                <Image
-                  src={ArrowRight}
-                  alt="arrow-right"
-                  className="w-6 h-4 text-accent"
-                  unoptimized
-                />
-              </motion.div>
+                <span>지금 신청하기</span>
+                <motion.div
+                  className="bg-white rounded-full p-2"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={ArrowRight}
+                    alt="arrow-right"
+                    className="w-6 h-4 text-accent"
+                    unoptimized
+                  />
+                </motion.div>
+              </Link>
             </motion.button>
           </motion.div>
         </motion.div>
+
+        {/* Hero Image with Dialog */}
         <motion.div
           className="max-w-6xl mx-auto sm:px-6 mb-6"
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -139,8 +152,10 @@ export default function HeroSection() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div
+            className="cursor-pointer"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            onClick={() => setIsDialogOpen(true)}
           >
             <Image
               src={HeroImage}
@@ -150,6 +165,12 @@ export default function HeroSection() {
             />
           </motion.div>
         </motion.div>
+
+        {/* Service Selection Dialog */}
+        <ServiceSelectionDialog
+          open={isDialogOpen}
+          onOpenChange={setIsDialogOpen}
+        />
       </div>
     </section>
   );

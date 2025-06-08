@@ -3,6 +3,7 @@
 import { ChevronRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 // Import process step icons
@@ -651,7 +652,6 @@ const ProcessSection = () => {
 
               {/* CTA Button */}
               <motion.button
-                className="bg-accent hover:bg-secondary text-white font-bold text-base rounded-[3.125rem] px-6 py-2 flex items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-colors w-fit"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{
@@ -664,10 +664,15 @@ const ProcessSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>지금 신청하기</span>
-                <div className="bg-white rounded-full p-2">
-                  <Image src={arrowRightIcon} alt="arrow-right" />
-                </div>
+                <Link
+                  href="/apply-service"
+                  className="bg-accent hover:bg-secondary text-white font-bold text-base rounded-[3.125rem] px-6 py-2 flex items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-colors w-fit"
+                >
+                  <span>지금 신청하기</span>
+                  <div className="bg-white rounded-full p-2">
+                    <Image src={arrowRightIcon} alt="arrow-right" />
+                  </div>
+                </Link>
               </motion.button>
             </motion.div>
           </div>

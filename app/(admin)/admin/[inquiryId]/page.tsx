@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 import { InquiryType } from "@/prisma/generated/prisma";
 import { prisma } from "@/prisma/prisma-client";
 
@@ -46,7 +47,13 @@ function InquiryTypeBadge({ type }: { type: InquiryType }) {
   };
 
   return (
-    <Badge variant={getVariant(type)} className="font-semibold text-white">
+    <Badge
+      variant={getVariant(type)}
+      className={cn(
+        "font-semibold text-white",
+        type === InquiryType.OTHER && "text-black"
+      )}
+    >
       {getTypeLabel(type)}
     </Badge>
   );
@@ -252,13 +259,16 @@ async function InquiryDetailContent({ inquiryId }: { inquiryId: string }) {
                 {inquiry.images.map((image) => (
                   <div key={image.id} className="space-y-2">
                     <a
-                      href={image.url}
+                      href={`/api/images/${image.url.replace("/uploads/", "")}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block cursor-pointer hover:opacity-80 transition-opacity"
                     >
                       <Image
-                        src={image.url}
+                        src={`/api/images/${image.url.replace(
+                          "/uploads/",
+                          ""
+                        )}`}
                         alt="첨부 이미지"
                         width={image.width}
                         height={image.height}
@@ -276,7 +286,10 @@ async function InquiryDetailContent({ inquiryId }: { inquiryId: string }) {
                         className="w-full"
                       >
                         <a
-                          href={image.url}
+                          href={`/api/images/${image.url.replace(
+                            "/uploads/",
+                            ""
+                          )}`}
                           download
                           target="_blank"
                           rel="noopener noreferrer"

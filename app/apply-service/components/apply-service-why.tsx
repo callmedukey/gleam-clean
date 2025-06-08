@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
@@ -167,23 +168,28 @@ const ApplyServiceWhy = () => {
           }}
           whileTap={{ scale: 0.95 }}
         >
-          <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-7 py-2 flex items-center gap-6 h-auto">
-            <span className="text-xl font-bold leading-[1.6]">신청하기</span>
-            <motion.div
-              className="bg-white rounded-full p-[0.5625rem] flex items-center justify-center"
-              whileHover={{
-                rotate: 360,
-                transition: { duration: 0.3, ease: "easeInOut" },
-              }}
-            >
-              <Image
-                src={arrowIcon}
-                alt="화살표"
-                width={14}
-                height={12}
-                className="w-[0.875rem] h-3"
-              />
-            </motion.div>
+          <Button
+            className="bg-accent hover:bg-accent/90 text-white rounded-full px-7 py-2 flex items-center gap-6 h-auto"
+            asChild
+          >
+            <Link href="https://smartstore.naver.com/365homecare/products/10495796237">
+              <span className="text-xl font-bold leading-[1.6]">신청하기</span>
+              <motion.div
+                className="bg-white rounded-full p-[0.5625rem] flex items-center justify-center"
+                whileHover={{
+                  rotate: 360,
+                  transition: { duration: 0.3, ease: "easeInOut" },
+                }}
+              >
+                <Image
+                  src={arrowIcon}
+                  alt="화살표"
+                  width={14}
+                  height={12}
+                  className="w-[0.875rem] h-3"
+                />
+              </motion.div>
+            </Link>
           </Button>
         </motion.div>
       </div>

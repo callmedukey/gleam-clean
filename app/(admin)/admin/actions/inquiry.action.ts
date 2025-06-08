@@ -1,5 +1,7 @@
 "use server";
 
+import { unlink } from "fs/promises";
+import { join } from "path";
 import { revalidatePath } from "next/cache";
 
 import { auth } from "@/auth";
@@ -67,6 +69,43 @@ export async function deleteInquiry(inquiryId: string): Promise<ActionResult> {
         message: "로그인이 필요합니다.",
       };
     }
+
+    // First, fetch the inquiry with its associated images
+    const inquiry = await prisma.inquiry.findUnique({
+      where: { id: inquiryId },
+      include: {
+        images: true,
+      },
+    });
+
+    if (!inquiry) {
+      return {
+        success: false,
+        message: "문의를 찾을 수 없습니다.",
+      };
+    }
+
+    // Delete associated image files from filesystem
+    if (inquiry.images.length > 0) {
+      const uploadDir = join(process.cwd(), "public", "uploads");
+
+      for (const image of inquiry.images) {
+        try {
+          // Extract filename from URL (remove /uploads/ prefix)
+          const fileName = image.url.replace("/uploads/", "");
+          const filePath = join(uploadDir, fileName);
+
+          // Delete the file from filesystem
+          await unlink(filePath);
+        } catch (fileError) {
+          // Log the error but don't fail the entire operation
+          // The file might already be deleted or not exist
+          console.warn(`파일 삭제 실패: ${image.url}`, fileError);
+        }
+      }
+    }
+
+    // Delete the inquiry from database (this will cascade delete the image records)
     await prisma.inquiry.delete({
       where: { id: inquiryId },
     });

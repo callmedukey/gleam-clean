@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 // Import the actual SVG icons from Figma
@@ -270,7 +271,6 @@ const EntryServiceSection = () => {
           viewport={{ once: true }}
         >
           <motion.button
-            className="bg-accent hover:bg-secondary text-white font-bold text-base sm:text-lg lg:text-xl rounded-[3.125rem] px-6 py-2 flex items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-colors w-fit"
             whileHover={{
               scale: 1.05,
               transition: { duration: 0.2 },
@@ -280,16 +280,21 @@ const EntryServiceSection = () => {
               transition: { duration: 0.1 },
             }}
           >
-            <span>지금 신청하기</span>
-            <motion.div
-              className="bg-white rounded-full p-2"
-              whileHover={{
-                rotate: 360,
-                transition: { duration: 0.3 },
-              }}
+            <Link
+              href="/apply-service"
+              className="bg-accent hover:bg-secondary text-white font-bold text-base sm:text-lg lg:text-xl rounded-[3.125rem] px-6 py-2 flex items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-colors w-fit"
             >
-              <Image src={ArrowIcon} alt="arrow-right" />
-            </motion.div>
+              <span>지금 신청하기</span>
+              <motion.div
+                className="bg-white rounded-full p-2"
+                whileHover={{
+                  rotate: 360,
+                  transition: { duration: 0.3 },
+                }}
+              >
+                <Image src={ArrowIcon} alt="arrow-right" />
+              </motion.div>
+            </Link>
           </motion.button>
         </motion.div>
       </div>

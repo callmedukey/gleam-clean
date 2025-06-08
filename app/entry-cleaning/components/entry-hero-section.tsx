@@ -1,12 +1,17 @@
+"use client";
+
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 // Import the downloaded images
+import InquiryDialog from "@/app/components/inquiry-dialog";
 import arrowIcon from "@/public/images/entry-cleaning/arrow-icon.svg";
 import heroImage from "@/public/images/entry-cleaning/hero-image.png";
 
 const EntryHeroSection = () => {
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+
   return (
     <section className="w-full max-w-7xl mx-auto pl-4 py-6 lg:py-12 min-h-[min(80vh,120rem)] flex items-center justify-center lg:justify-between overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center relative gap-10 w-full">
@@ -61,6 +66,7 @@ const EntryHeroSection = () => {
             viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => setIsInquiryOpen(true)}
           >
             <span>문의하기</span>
             <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full">
@@ -105,6 +111,9 @@ const EntryHeroSection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Inquiry Dialog */}
+      <InquiryDialog open={isInquiryOpen} onOpenChange={setIsInquiryOpen} />
     </section>
   );
 };

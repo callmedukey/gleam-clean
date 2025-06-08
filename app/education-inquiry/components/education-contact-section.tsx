@@ -126,9 +126,14 @@ const EducationContactSection = () => {
           viewport={{ once: true }}
         >
           <div className="relative">
-            <div className="w-full h-[32rem] bg-gray-200 rounded-lg flex items-center justify-center">
-              <span className="text-lg font-semibold text-black">지도맵</span>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1208.6234405056332!2d126.95443868321522!3d37.2744787089698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6829fd7c9523%3A0x1514775e5d71766d!2z6rK96riw64-EIOyImOybkOyLnCDqtozshKDqtawg6riI6rOh66GcIDIxOQ!5e0!3m2!1sko!2skr!4v1749360946238!5m2!1sko!2skr"
+              className="w-full h-[32rem] rounded-lg border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="글림케어 위치"
+            />
           </div>
         </motion.div>
       </div>

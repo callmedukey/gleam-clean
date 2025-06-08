@@ -3,6 +3,7 @@
 import { ChevronRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 // Import icons
@@ -497,7 +498,6 @@ const ACProcessSection = () => {
 
         {/* CTA Button */}
         <motion.button
-          className="bg-accent hover:bg-accent/80 text-white font-bold text-base rounded-[3.125rem] px-6 py-2 flex items-center justify-center gap-4 sm:gap-6 transition-colors"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           whileHover={{
@@ -508,14 +508,19 @@ const ACProcessSection = () => {
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <span>지금 신청하기</span>
-          <motion.div
-            className="bg-white rounded-full p-2"
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.3 }}
+          <Link
+            href="/apply-service"
+            className="bg-accent hover:bg-accent/80 text-white font-bold text-base rounded-[3.125rem] px-6 py-2 flex items-center justify-center gap-4 sm:gap-6 transition-colors"
           >
-            <Image src={arrowRightIcon} alt="arrow-right" />
-          </motion.div>
+            <span>지금 신청하기</span>
+            <motion.div
+              className="bg-white rounded-full p-2"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image src={arrowRightIcon} alt="arrow-right" />
+            </motion.div>
+          </Link>
         </motion.button>
       </div>
     </motion.section>

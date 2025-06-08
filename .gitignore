@@ -42,3 +42,7 @@ next-env.d.ts
 /redis-data
 data
 /prisma/generated
+
+# uploads
+/public/uploads/*
+!/public/uploads/.gitkeep

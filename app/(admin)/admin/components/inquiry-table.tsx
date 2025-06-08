@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { cn } from "@/lib/utils";
 import { InquiryType } from "@/prisma/generated/prisma";
 
 import {
@@ -52,7 +53,13 @@ function InquiryTypeBadge({ type }: { type: InquiryType }) {
   };
 
   return (
-    <Badge variant={getVariant(type)} className="font-semibold text-white">
+    <Badge
+      variant={getVariant(type)}
+      className={cn(
+        "font-semibold text-white",
+        type === InquiryType.OTHER && "text-black"
+      )}
+    >
       {getTypeLabel(type)}
     </Badge>
   );

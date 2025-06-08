@@ -1,12 +1,23 @@
+"use client";
+
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 
 import cleaningServiceIcon from "@/public/icons/cleaning-service.svg";
 import customerCareIcon from "@/public/icons/customer-care.svg";
 import onlineBookingIcon from "@/public/icons/online-booking.svg";
 
+import InquiryDialog from "./inquiry-dialog";
+import ServiceSelectionDialog from "./service-selection-dialog";
+
+type ButtonAction = "link" | "selection" | "inquiry";
+
 const KeyFeaturesSection = () => {
+  const [isServiceSelectionOpen, setIsServiceSelectionOpen] = useState(false);
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+
   const features = [
     {
       icon: onlineBookingIcon,
@@ -14,21 +25,71 @@ const KeyFeaturesSection = () => {
       description:
         "원하는 서비스, 온라인 또는 전화로\n일정 조율 후 간편하게 예약",
       buttonText: "예약하기",
+      buttonLink: "/apply-service",
+      buttonAction: "link" as ButtonAction,
     },
     {
       icon: cleaningServiceIcon,
       title: "전문가 방문 케어서비스",
       description:
         "예약한 일정에 맞춰 전문가가 방문,\n맞춤형 케어 서비스를 꼼꼼하게 제공",
-      buttonText: "후기보기",
+      buttonText: "알아보기",
+      buttonAction: "selection" as ButtonAction,
     },
     {
       icon: customerCareIcon,
       title: "1:1 맞춤 상담",
       description: "맞춤형 상담으로 편안한 일정 조율,\n오직 필요한 케어만",
       buttonText: "상담 받기",
+      buttonAction: "inquiry" as ButtonAction,
     },
   ];
+
+  const handleButtonClick = (feature: (typeof features)[0]) => {
+    switch (feature.buttonAction) {
+      case "selection":
+        setIsServiceSelectionOpen(true);
+        break;
+      case "inquiry":
+        setIsInquiryOpen(true);
+        break;
+      // link case is handled by Link component
+    }
+  };
+
+  const renderButton = (feature: (typeof features)[0], index: number) => {
+    const buttonProps = {
+      className:
+        "bg-accent text-white font-normal text-base px-6 py-1 rounded-full hover:bg-secondary transition-colors duration-200",
+      initial: { opacity: 0, y: 20 },
+      whileInView: { opacity: 1, y: 0 },
+      transition: {
+        duration: 0.5,
+        delay: 0.7 + index * 0.1,
+        ease: "easeOut",
+      },
+      viewport: { once: true },
+      whileHover: { scale: 1.05 },
+      whileTap: { scale: 0.95 },
+    };
+
+    if (feature.buttonAction === "link" && feature.buttonLink) {
+      return (
+        <Link href={feature.buttonLink}>
+          <motion.button {...buttonProps}>{feature.buttonText}</motion.button>
+        </Link>
+      );
+    }
+
+    return (
+      <motion.button
+        {...buttonProps}
+        onClick={() => handleButtonClick(feature)}
+      >
+        {feature.buttonText}
+      </motion.button>
+    );
+  };
 
   return (
     <motion.section
@@ -119,27 +180,21 @@ const KeyFeaturesSection = () => {
                     {feature.description}
                   </motion.p>
 
-                  <motion.button
-                    className="bg-accent text-white font-normal text-base px-6 py-1 rounded-full hover:bg-secondary transition-colors duration-200"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.7 + index * 0.1,
-                      ease: "easeOut",
-                    }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {feature.buttonText}
-                  </motion.button>
+                  {renderButton(feature, index)}
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Dialogs */}
+      <ServiceSelectionDialog
+        open={isServiceSelectionOpen}
+        onOpenChange={setIsServiceSelectionOpen}
+      />
+
+      <InquiryDialog open={isInquiryOpen} onOpenChange={setIsInquiryOpen} />
     </motion.section>
   );
 };

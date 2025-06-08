@@ -24,6 +24,7 @@ import LogoImage from "@/public/images/logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
   const pathname = usePathname();
 
   // Helper function to check if a link is active
@@ -136,21 +137,24 @@ export default function Header() {
             </button>
 
             {/* 예약 - Filled Button */}
-            <button className="flex items-center justify-center gap-2 px-btn-x py-btn-y rounded-btn bg-accent text-white font-normal text-base leading-text hover:bg-secondary transition-colors">
+            <Link
+              href="/apply-service"
+              className="flex items-center justify-center gap-2 px-btn-x py-btn-y rounded-btn bg-accent text-white font-normal text-base leading-text hover:bg-secondary transition-colors"
+            >
               <span className="w-btn-text text-center">예약</span>
-            </button>
+            </Link>
           </div>
         </nav>
 
         {/* Mobile Menu */}
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <button className="lg:hidden p-2 rounded-md hover:bg-gray-50 transition-colors">
               <Menu className="w-6 h-6 text-text-primary" />
               <span className="sr-only">메뉴 열기</span>
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-80">
+          <SheetContent side="right" className="w-80 px-4">
             <SheetHeader>
               <SheetTitle className="text-left text-text-primary">
                 메뉴
@@ -170,6 +174,7 @@ export default function Header() {
                         ? "text-primary"
                         : "text-text-primary"
                     }`}
+                    onClick={() => setIsSheetOpen(false)}
                   >
                     매트리스와 소파 청소
                   </Link>
@@ -180,6 +185,7 @@ export default function Header() {
                         ? "text-primary"
                         : "text-text-primary"
                     }`}
+                    onClick={() => setIsSheetOpen(false)}
                   >
                     에어컨 청소
                   </Link>
@@ -190,6 +196,7 @@ export default function Header() {
                         ? "text-primary"
                         : "text-text-primary"
                     }`}
+                    onClick={() => setIsSheetOpen(false)}
                   >
                     입주 청소
                   </Link>
@@ -204,36 +211,47 @@ export default function Header() {
                     ? "text-primary"
                     : "text-text-primary"
                 }`}
+                onClick={() => setIsSheetOpen(false)}
               >
                 서비스 신청
               </Link>
               <Link
-                href="/news"
+                href="/blog"
                 className={`block py-3 text-base hover:text-secondary transition-colors border-b border-gray-100 ${
-                  isActiveLink("/news") ? "text-primary" : "text-text-primary"
+                  isActiveLink("/blog") ? "text-primary" : "text-text-primary"
                 }`}
+                onClick={() => setIsSheetOpen(false)}
               >
                 최신 소식
               </Link>
               <Link
-                href="/contact"
+                href="/education-inquiry"
                 className={`block py-3 text-base hover:text-secondary transition-colors border-b border-gray-100 ${
-                  isActiveLink("/contact")
+                  isActiveLink("/education-inquiry")
                     ? "text-primary"
                     : "text-text-primary"
                 }`}
+                onClick={() => setIsSheetOpen(false)}
               >
                 교육 문의
               </Link>
 
               {/* 액션 버튼들 */}
               <div className="flex flex-col gap-3 mt-6">
-                <button className="w-full py-3 px-4 rounded-btn border border-primary text-primary font-normal text-base hover:bg-primary hover:text-white transition-colors">
+                <Link
+                  href="/offices"
+                  className="w-full py-3 px-4 rounded-btn border border-primary text-primary font-normal text-base hover:bg-primary hover:text-white transition-colors"
+                  onClick={() => setIsSheetOpen(false)}
+                >
                   지점 찾기
-                </button>
-                <button className="w-full py-3 px-4 rounded-btn bg-accent text-white font-normal text-base hover:bg-secondary transition-colors">
+                </Link>
+                <Link
+                  href="/apply-service"
+                  className="w-full py-3 px-4 rounded-btn bg-accent text-white font-normal text-base hover:bg-secondary transition-colors"
+                  onClick={() => setIsSheetOpen(false)}
+                >
                   예약
-                </button>
+                </Link>
               </div>
             </div>
           </SheetContent>
