@@ -1563,37 +1563,6 @@ export namespace Prisma {
 
 
   /**
-   * Count Type BlogPostCountOutputType
-   */
-
-  export type BlogPostCountOutputType = {
-    images: number
-  }
-
-  export type BlogPostCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    images?: boolean | BlogPostCountOutputTypeCountImagesArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * BlogPostCountOutputType without action
-   */
-  export type BlogPostCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the BlogPostCountOutputType
-     */
-    select?: BlogPostCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * BlogPostCountOutputType without action
-   */
-  export type BlogPostCountOutputTypeCountImagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ImageWhereInput
-  }
-
-
-  /**
    * Count Type UserCountOutputType
    */
 
@@ -4991,6 +4960,7 @@ export namespace Prisma {
     content: string | null
     published: boolean | null
     url: string | null
+    imageId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5002,6 +4972,7 @@ export namespace Prisma {
     content: string | null
     published: boolean | null
     url: string | null
+    imageId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5013,6 +4984,7 @@ export namespace Prisma {
     content: number
     published: number
     url: number
+    imageId: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -5026,6 +4998,7 @@ export namespace Prisma {
     content?: true
     published?: true
     url?: true
+    imageId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5037,6 +5010,7 @@ export namespace Prisma {
     content?: true
     published?: true
     url?: true
+    imageId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5048,6 +5022,7 @@ export namespace Prisma {
     content?: true
     published?: true
     url?: true
+    imageId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -5132,6 +5107,7 @@ export namespace Prisma {
     content: string
     published: boolean
     url: string
+    imageId: string | null
     createdAt: Date
     updatedAt: Date
     _count: BlogPostCountAggregateOutputType | null
@@ -5160,10 +5136,10 @@ export namespace Prisma {
     content?: boolean
     published?: boolean
     url?: boolean
+    imageId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    images?: boolean | BlogPost$imagesArgs<ExtArgs>
-    _count?: boolean | BlogPostCountOutputTypeDefaultArgs<ExtArgs>
+    image?: boolean | BlogPost$imageArgs<ExtArgs>
   }, ExtArgs["result"]["blogPost"]>
 
   export type BlogPostSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -5173,6 +5149,7 @@ export namespace Prisma {
     content?: boolean
     published?: boolean
     url?: boolean
+    imageId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["blogPost"]>
@@ -5184,6 +5161,7 @@ export namespace Prisma {
     content?: boolean
     published?: boolean
     url?: boolean
+    imageId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["blogPost"]>
@@ -5195,14 +5173,14 @@ export namespace Prisma {
     content?: boolean
     published?: boolean
     url?: boolean
+    imageId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type BlogPostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "badge" | "content" | "published" | "url" | "createdAt" | "updatedAt", ExtArgs["result"]["blogPost"]>
+  export type BlogPostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "badge" | "content" | "published" | "url" | "imageId" | "createdAt" | "updatedAt", ExtArgs["result"]["blogPost"]>
   export type BlogPostInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    images?: boolean | BlogPost$imagesArgs<ExtArgs>
-    _count?: boolean | BlogPostCountOutputTypeDefaultArgs<ExtArgs>
+    image?: boolean | BlogPost$imageArgs<ExtArgs>
   }
   export type BlogPostIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
   export type BlogPostIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -5210,7 +5188,7 @@ export namespace Prisma {
   export type $BlogPostPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "BlogPost"
     objects: {
-      images: Prisma.$ImagePayload<ExtArgs>[]
+      image: Prisma.$ImagePayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -5219,6 +5197,7 @@ export namespace Prisma {
       content: string
       published: boolean
       url: string
+      imageId: string | null
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["blogPost"]>
@@ -5615,7 +5594,7 @@ export namespace Prisma {
    */
   export interface Prisma__BlogPostClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    images<T extends BlogPost$imagesArgs<ExtArgs> = {}>(args?: Subset<T, BlogPost$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    image<T extends BlogPost$imageArgs<ExtArgs> = {}>(args?: Subset<T, BlogPost$imageArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5651,6 +5630,7 @@ export namespace Prisma {
     readonly content: FieldRef<"BlogPost", 'String'>
     readonly published: FieldRef<"BlogPost", 'Boolean'>
     readonly url: FieldRef<"BlogPost", 'String'>
+    readonly imageId: FieldRef<"BlogPost", 'String'>
     readonly createdAt: FieldRef<"BlogPost", 'DateTime'>
     readonly updatedAt: FieldRef<"BlogPost", 'DateTime'>
   }
@@ -6041,9 +6021,9 @@ export namespace Prisma {
   }
 
   /**
-   * BlogPost.images
+   * BlogPost.image
    */
-  export type BlogPost$imagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type BlogPost$imageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Image
      */
@@ -6057,11 +6037,6 @@ export namespace Prisma {
      */
     include?: ImageInclude<ExtArgs> | null
     where?: ImageWhereInput
-    orderBy?: ImageOrderByWithRelationInput | ImageOrderByWithRelationInput[]
-    cursor?: ImageWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ImageScalarFieldEnum | ImageScalarFieldEnum[]
   }
 
   /**
@@ -10533,6 +10508,7 @@ export namespace Prisma {
     content: 'content',
     published: 'published',
     url: 'url',
+    imageId: 'imageId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -10891,6 +10867,7 @@ export namespace Prisma {
 
   export type ImageWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    blogPostId?: string
     AND?: ImageWhereInput | ImageWhereInput[]
     OR?: ImageWhereInput[]
     NOT?: ImageWhereInput | ImageWhereInput[]
@@ -10898,12 +10875,11 @@ export namespace Prisma {
     width?: IntFilter<"Image"> | number
     height?: IntFilter<"Image"> | number
     inquiryId?: StringNullableFilter<"Image"> | string | null
-    blogPostId?: StringNullableFilter<"Image"> | string | null
     createdAt?: DateTimeFilter<"Image"> | Date | string
     updatedAt?: DateTimeFilter<"Image"> | Date | string
     inquiry?: XOR<InquiryNullableScalarRelationFilter, InquiryWhereInput> | null
     blogPost?: XOR<BlogPostNullableScalarRelationFilter, BlogPostWhereInput> | null
-  }, "id">
+  }, "id" | "blogPostId">
 
   export type ImageOrderByWithAggregationInput = {
     id?: SortOrder
@@ -10945,9 +10921,10 @@ export namespace Prisma {
     content?: StringFilter<"BlogPost"> | string
     published?: BoolFilter<"BlogPost"> | boolean
     url?: StringFilter<"BlogPost"> | string
+    imageId?: StringNullableFilter<"BlogPost"> | string | null
     createdAt?: DateTimeFilter<"BlogPost"> | Date | string
     updatedAt?: DateTimeFilter<"BlogPost"> | Date | string
-    images?: ImageListRelationFilter
+    image?: XOR<ImageNullableScalarRelationFilter, ImageWhereInput> | null
   }
 
   export type BlogPostOrderByWithRelationInput = {
@@ -10957,9 +10934,10 @@ export namespace Prisma {
     content?: SortOrder
     published?: SortOrder
     url?: SortOrder
+    imageId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    images?: ImageOrderByRelationAggregateInput
+    image?: ImageOrderByWithRelationInput
   }
 
   export type BlogPostWhereUniqueInput = Prisma.AtLeast<{
@@ -10972,9 +10950,10 @@ export namespace Prisma {
     content?: StringFilter<"BlogPost"> | string
     published?: BoolFilter<"BlogPost"> | boolean
     url?: StringFilter<"BlogPost"> | string
+    imageId?: StringNullableFilter<"BlogPost"> | string | null
     createdAt?: DateTimeFilter<"BlogPost"> | Date | string
     updatedAt?: DateTimeFilter<"BlogPost"> | Date | string
-    images?: ImageListRelationFilter
+    image?: XOR<ImageNullableScalarRelationFilter, ImageWhereInput> | null
   }, "id">
 
   export type BlogPostOrderByWithAggregationInput = {
@@ -10984,6 +10963,7 @@ export namespace Prisma {
     content?: SortOrder
     published?: SortOrder
     url?: SortOrder
+    imageId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: BlogPostCountOrderByAggregateInput
@@ -11001,6 +10981,7 @@ export namespace Prisma {
     content?: StringWithAggregatesFilter<"BlogPost"> | string
     published?: BoolWithAggregatesFilter<"BlogPost"> | boolean
     url?: StringWithAggregatesFilter<"BlogPost"> | string
+    imageId?: StringNullableWithAggregatesFilter<"BlogPost"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"BlogPost"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"BlogPost"> | Date | string
   }
@@ -11457,7 +11438,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     inquiry?: InquiryCreateNestedOneWithoutImagesInput
-    blogPost?: BlogPostCreateNestedOneWithoutImagesInput
+    blogPost?: BlogPostCreateNestedOneWithoutImageInput
   }
 
   export type ImageUncheckedCreateInput = {
@@ -11479,7 +11460,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     inquiry?: InquiryUpdateOneWithoutImagesNestedInput
-    blogPost?: BlogPostUpdateOneWithoutImagesNestedInput
+    blogPost?: BlogPostUpdateOneWithoutImageNestedInput
   }
 
   export type ImageUncheckedUpdateInput = {
@@ -11531,9 +11512,10 @@ export namespace Prisma {
     content: string
     published?: boolean
     url: string
+    imageId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    images?: ImageCreateNestedManyWithoutBlogPostInput
+    image?: ImageCreateNestedOneWithoutBlogPostInput
   }
 
   export type BlogPostUncheckedCreateInput = {
@@ -11543,9 +11525,10 @@ export namespace Prisma {
     content: string
     published?: boolean
     url: string
+    imageId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    images?: ImageUncheckedCreateNestedManyWithoutBlogPostInput
+    image?: ImageUncheckedCreateNestedOneWithoutBlogPostInput
   }
 
   export type BlogPostUpdateInput = {
@@ -11555,9 +11538,10 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
     url?: StringFieldUpdateOperationsInput | string
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    images?: ImageUpdateManyWithoutBlogPostNestedInput
+    image?: ImageUpdateOneWithoutBlogPostNestedInput
   }
 
   export type BlogPostUncheckedUpdateInput = {
@@ -11567,9 +11551,10 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
     url?: StringFieldUpdateOperationsInput | string
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    images?: ImageUncheckedUpdateManyWithoutBlogPostNestedInput
+    image?: ImageUncheckedUpdateOneWithoutBlogPostNestedInput
   }
 
   export type BlogPostCreateManyInput = {
@@ -11579,6 +11564,7 @@ export namespace Prisma {
     content: string
     published?: boolean
     url: string
+    imageId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11590,6 +11576,7 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
     url?: StringFieldUpdateOperationsInput | string
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11601,6 +11588,7 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
     url?: StringFieldUpdateOperationsInput | string
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -12197,6 +12185,11 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+  export type ImageNullableScalarRelationFilter = {
+    is?: ImageWhereInput | null
+    isNot?: ImageWhereInput | null
+  }
+
   export type BlogPostCountOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
@@ -12204,6 +12197,7 @@ export namespace Prisma {
     content?: SortOrder
     published?: SortOrder
     url?: SortOrder
+    imageId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -12215,6 +12209,7 @@ export namespace Prisma {
     content?: SortOrder
     published?: SortOrder
     url?: SortOrder
+    imageId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -12226,6 +12221,7 @@ export namespace Prisma {
     content?: SortOrder
     published?: SortOrder
     url?: SortOrder
+    imageId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -12535,9 +12531,9 @@ export namespace Prisma {
     connect?: InquiryWhereUniqueInput
   }
 
-  export type BlogPostCreateNestedOneWithoutImagesInput = {
-    create?: XOR<BlogPostCreateWithoutImagesInput, BlogPostUncheckedCreateWithoutImagesInput>
-    connectOrCreate?: BlogPostCreateOrConnectWithoutImagesInput
+  export type BlogPostCreateNestedOneWithoutImageInput = {
+    create?: XOR<BlogPostCreateWithoutImageInput, BlogPostUncheckedCreateWithoutImageInput>
+    connectOrCreate?: BlogPostCreateOrConnectWithoutImageInput
     connect?: BlogPostWhereUniqueInput
   }
 
@@ -12559,60 +12555,50 @@ export namespace Prisma {
     update?: XOR<XOR<InquiryUpdateToOneWithWhereWithoutImagesInput, InquiryUpdateWithoutImagesInput>, InquiryUncheckedUpdateWithoutImagesInput>
   }
 
-  export type BlogPostUpdateOneWithoutImagesNestedInput = {
-    create?: XOR<BlogPostCreateWithoutImagesInput, BlogPostUncheckedCreateWithoutImagesInput>
-    connectOrCreate?: BlogPostCreateOrConnectWithoutImagesInput
-    upsert?: BlogPostUpsertWithoutImagesInput
+  export type BlogPostUpdateOneWithoutImageNestedInput = {
+    create?: XOR<BlogPostCreateWithoutImageInput, BlogPostUncheckedCreateWithoutImageInput>
+    connectOrCreate?: BlogPostCreateOrConnectWithoutImageInput
+    upsert?: BlogPostUpsertWithoutImageInput
     disconnect?: BlogPostWhereInput | boolean
     delete?: BlogPostWhereInput | boolean
     connect?: BlogPostWhereUniqueInput
-    update?: XOR<XOR<BlogPostUpdateToOneWithWhereWithoutImagesInput, BlogPostUpdateWithoutImagesInput>, BlogPostUncheckedUpdateWithoutImagesInput>
+    update?: XOR<XOR<BlogPostUpdateToOneWithWhereWithoutImageInput, BlogPostUpdateWithoutImageInput>, BlogPostUncheckedUpdateWithoutImageInput>
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
   }
 
-  export type ImageCreateNestedManyWithoutBlogPostInput = {
-    create?: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput> | ImageCreateWithoutBlogPostInput[] | ImageUncheckedCreateWithoutBlogPostInput[]
-    connectOrCreate?: ImageCreateOrConnectWithoutBlogPostInput | ImageCreateOrConnectWithoutBlogPostInput[]
-    createMany?: ImageCreateManyBlogPostInputEnvelope
-    connect?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
+  export type ImageCreateNestedOneWithoutBlogPostInput = {
+    create?: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput>
+    connectOrCreate?: ImageCreateOrConnectWithoutBlogPostInput
+    connect?: ImageWhereUniqueInput
   }
 
-  export type ImageUncheckedCreateNestedManyWithoutBlogPostInput = {
-    create?: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput> | ImageCreateWithoutBlogPostInput[] | ImageUncheckedCreateWithoutBlogPostInput[]
-    connectOrCreate?: ImageCreateOrConnectWithoutBlogPostInput | ImageCreateOrConnectWithoutBlogPostInput[]
-    createMany?: ImageCreateManyBlogPostInputEnvelope
-    connect?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
+  export type ImageUncheckedCreateNestedOneWithoutBlogPostInput = {
+    create?: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput>
+    connectOrCreate?: ImageCreateOrConnectWithoutBlogPostInput
+    connect?: ImageWhereUniqueInput
   }
 
-  export type ImageUpdateManyWithoutBlogPostNestedInput = {
-    create?: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput> | ImageCreateWithoutBlogPostInput[] | ImageUncheckedCreateWithoutBlogPostInput[]
-    connectOrCreate?: ImageCreateOrConnectWithoutBlogPostInput | ImageCreateOrConnectWithoutBlogPostInput[]
-    upsert?: ImageUpsertWithWhereUniqueWithoutBlogPostInput | ImageUpsertWithWhereUniqueWithoutBlogPostInput[]
-    createMany?: ImageCreateManyBlogPostInputEnvelope
-    set?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
-    disconnect?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
-    delete?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
-    connect?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
-    update?: ImageUpdateWithWhereUniqueWithoutBlogPostInput | ImageUpdateWithWhereUniqueWithoutBlogPostInput[]
-    updateMany?: ImageUpdateManyWithWhereWithoutBlogPostInput | ImageUpdateManyWithWhereWithoutBlogPostInput[]
-    deleteMany?: ImageScalarWhereInput | ImageScalarWhereInput[]
+  export type ImageUpdateOneWithoutBlogPostNestedInput = {
+    create?: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput>
+    connectOrCreate?: ImageCreateOrConnectWithoutBlogPostInput
+    upsert?: ImageUpsertWithoutBlogPostInput
+    disconnect?: ImageWhereInput | boolean
+    delete?: ImageWhereInput | boolean
+    connect?: ImageWhereUniqueInput
+    update?: XOR<XOR<ImageUpdateToOneWithWhereWithoutBlogPostInput, ImageUpdateWithoutBlogPostInput>, ImageUncheckedUpdateWithoutBlogPostInput>
   }
 
-  export type ImageUncheckedUpdateManyWithoutBlogPostNestedInput = {
-    create?: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput> | ImageCreateWithoutBlogPostInput[] | ImageUncheckedCreateWithoutBlogPostInput[]
-    connectOrCreate?: ImageCreateOrConnectWithoutBlogPostInput | ImageCreateOrConnectWithoutBlogPostInput[]
-    upsert?: ImageUpsertWithWhereUniqueWithoutBlogPostInput | ImageUpsertWithWhereUniqueWithoutBlogPostInput[]
-    createMany?: ImageCreateManyBlogPostInputEnvelope
-    set?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
-    disconnect?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
-    delete?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
-    connect?: ImageWhereUniqueInput | ImageWhereUniqueInput[]
-    update?: ImageUpdateWithWhereUniqueWithoutBlogPostInput | ImageUpdateWithWhereUniqueWithoutBlogPostInput[]
-    updateMany?: ImageUpdateManyWithWhereWithoutBlogPostInput | ImageUpdateManyWithWhereWithoutBlogPostInput[]
-    deleteMany?: ImageScalarWhereInput | ImageScalarWhereInput[]
+  export type ImageUncheckedUpdateOneWithoutBlogPostNestedInput = {
+    create?: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput>
+    connectOrCreate?: ImageCreateOrConnectWithoutBlogPostInput
+    upsert?: ImageUpsertWithoutBlogPostInput
+    disconnect?: ImageWhereInput | boolean
+    delete?: ImageWhereInput | boolean
+    connect?: ImageWhereUniqueInput
+    update?: XOR<XOR<ImageUpdateToOneWithWhereWithoutBlogPostInput, ImageUpdateWithoutBlogPostInput>, ImageUncheckedUpdateWithoutBlogPostInput>
   }
 
   export type AccountCreateNestedManyWithoutUserInput = {
@@ -12985,7 +12971,7 @@ export namespace Prisma {
     height: number
     createdAt?: Date | string
     updatedAt?: Date | string
-    blogPost?: BlogPostCreateNestedOneWithoutImagesInput
+    blogPost?: BlogPostCreateNestedOneWithoutImageInput
   }
 
   export type ImageUncheckedCreateWithoutInquiryInput = {
@@ -13067,31 +13053,33 @@ export namespace Prisma {
     create: XOR<InquiryCreateWithoutImagesInput, InquiryUncheckedCreateWithoutImagesInput>
   }
 
-  export type BlogPostCreateWithoutImagesInput = {
+  export type BlogPostCreateWithoutImageInput = {
     id?: string
     title: string
     badge: string
     content: string
     published?: boolean
     url: string
+    imageId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type BlogPostUncheckedCreateWithoutImagesInput = {
+  export type BlogPostUncheckedCreateWithoutImageInput = {
     id?: string
     title: string
     badge: string
     content: string
     published?: boolean
     url: string
+    imageId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type BlogPostCreateOrConnectWithoutImagesInput = {
+  export type BlogPostCreateOrConnectWithoutImageInput = {
     where: BlogPostWhereUniqueInput
-    create: XOR<BlogPostCreateWithoutImagesInput, BlogPostUncheckedCreateWithoutImagesInput>
+    create: XOR<BlogPostCreateWithoutImageInput, BlogPostUncheckedCreateWithoutImageInput>
   }
 
   export type InquiryUpsertWithoutImagesInput = {
@@ -13129,35 +13117,37 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type BlogPostUpsertWithoutImagesInput = {
-    update: XOR<BlogPostUpdateWithoutImagesInput, BlogPostUncheckedUpdateWithoutImagesInput>
-    create: XOR<BlogPostCreateWithoutImagesInput, BlogPostUncheckedCreateWithoutImagesInput>
+  export type BlogPostUpsertWithoutImageInput = {
+    update: XOR<BlogPostUpdateWithoutImageInput, BlogPostUncheckedUpdateWithoutImageInput>
+    create: XOR<BlogPostCreateWithoutImageInput, BlogPostUncheckedCreateWithoutImageInput>
     where?: BlogPostWhereInput
   }
 
-  export type BlogPostUpdateToOneWithWhereWithoutImagesInput = {
+  export type BlogPostUpdateToOneWithWhereWithoutImageInput = {
     where?: BlogPostWhereInput
-    data: XOR<BlogPostUpdateWithoutImagesInput, BlogPostUncheckedUpdateWithoutImagesInput>
+    data: XOR<BlogPostUpdateWithoutImageInput, BlogPostUncheckedUpdateWithoutImageInput>
   }
 
-  export type BlogPostUpdateWithoutImagesInput = {
+  export type BlogPostUpdateWithoutImageInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     badge?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
     url?: StringFieldUpdateOperationsInput | string
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type BlogPostUncheckedUpdateWithoutImagesInput = {
+  export type BlogPostUncheckedUpdateWithoutImageInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     badge?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
     url?: StringFieldUpdateOperationsInput | string
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -13187,25 +13177,35 @@ export namespace Prisma {
     create: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput>
   }
 
-  export type ImageCreateManyBlogPostInputEnvelope = {
-    data: ImageCreateManyBlogPostInput | ImageCreateManyBlogPostInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ImageUpsertWithWhereUniqueWithoutBlogPostInput = {
-    where: ImageWhereUniqueInput
+  export type ImageUpsertWithoutBlogPostInput = {
     update: XOR<ImageUpdateWithoutBlogPostInput, ImageUncheckedUpdateWithoutBlogPostInput>
     create: XOR<ImageCreateWithoutBlogPostInput, ImageUncheckedCreateWithoutBlogPostInput>
+    where?: ImageWhereInput
   }
 
-  export type ImageUpdateWithWhereUniqueWithoutBlogPostInput = {
-    where: ImageWhereUniqueInput
+  export type ImageUpdateToOneWithWhereWithoutBlogPostInput = {
+    where?: ImageWhereInput
     data: XOR<ImageUpdateWithoutBlogPostInput, ImageUncheckedUpdateWithoutBlogPostInput>
   }
 
-  export type ImageUpdateManyWithWhereWithoutBlogPostInput = {
-    where: ImageScalarWhereInput
-    data: XOR<ImageUpdateManyMutationInput, ImageUncheckedUpdateManyWithoutBlogPostInput>
+  export type ImageUpdateWithoutBlogPostInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    width?: IntFieldUpdateOperationsInput | number
+    height?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    inquiry?: InquiryUpdateOneWithoutImagesNestedInput
+  }
+
+  export type ImageUncheckedUpdateWithoutBlogPostInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    width?: IntFieldUpdateOperationsInput | number
+    height?: IntFieldUpdateOperationsInput | number
+    inquiryId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type AccountCreateWithoutUserInput = {
@@ -13495,7 +13495,7 @@ export namespace Prisma {
     height?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    blogPost?: BlogPostUpdateOneWithoutImagesNestedInput
+    blogPost?: BlogPostUpdateOneWithoutImageNestedInput
   }
 
   export type ImageUncheckedUpdateWithoutInquiryInput = {
@@ -13514,46 +13514,6 @@ export namespace Prisma {
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     blogPostId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ImageCreateManyBlogPostInput = {
-    id?: string
-    url: string
-    width: number
-    height: number
-    inquiryId?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ImageUpdateWithoutBlogPostInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-    width?: IntFieldUpdateOperationsInput | number
-    height?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    inquiry?: InquiryUpdateOneWithoutImagesNestedInput
-  }
-
-  export type ImageUncheckedUpdateWithoutBlogPostInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-    width?: IntFieldUpdateOperationsInput | number
-    height?: IntFieldUpdateOperationsInput | number
-    inquiryId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ImageUncheckedUpdateManyWithoutBlogPostInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-    width?: IntFieldUpdateOperationsInput | number
-    height?: IntFieldUpdateOperationsInput | number
-    inquiryId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

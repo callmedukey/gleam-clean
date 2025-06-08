@@ -43,8 +43,8 @@ model Image {
   inquiry   Inquiry? @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
   inquiryId String?
 
-  blogPostId String?
-  blogPost   BlogPost? @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
+  blogPost BlogPost? @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
+  blogPostId String? @unique
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -59,7 +59,8 @@ model BlogPost {
   published Boolean @default(false)
 
   url    String
-  images Image[]
+  image Image?
+  imageId String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

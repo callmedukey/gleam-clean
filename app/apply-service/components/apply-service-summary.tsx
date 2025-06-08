@@ -249,7 +249,7 @@ const ApplyServiceSummary = () => {
       period: "3 개월",
       buttonText: "베이직 케어 신청",
       buttonLink:
-        "https://smartstore.naver.com/365homecare/products/10495796237",
+        "https://smartstore.naver.com/365homecare/products/10488076849",
       buttonColor: "blue" as const,
       backgroundImage: basicCareBg,
       icons: [
@@ -278,7 +278,7 @@ const ApplyServiceSummary = () => {
       period: "6 개월",
       buttonText: "프리미엄 케어 신청",
       buttonLink:
-        "https://smartstore.naver.com/365homecare/products/10495796237",
+        "https://smartstore.naver.com/365homecare/products/10488076849",
       buttonColor: "green" as const,
       backgroundImage: premiumCareBg,
       icons: [

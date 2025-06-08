@@ -1,9 +1,11 @@
 import * as motion from "motion/react-client";
-import React from "react";
+import React, { Suspense } from "react";
 
-import { Button } from "@/components/ui/button";
-
-import { BlogGrid } from "./components/blog-grid";
+import { BlogContentWrapper } from "./components/blog-content-wrapper";
+import {
+  getPublishedBlogPostsWithLimit,
+  getPublishedBlogPostsCount,
+} from "./query/blog.query";
 
 export const metadata = {
   title: "최신 소식",
@@ -12,57 +14,49 @@ export const metadata = {
 
 export const dynamic = "force-dynamic";
 
-// Mock blog data based on Figma design
-const blogPosts = [
-  {
-    id: 1,
-    title: "클리닝 서비스의 중요성",
-    description: "정기적인 클리닝으로 건강한 생활 환경을 유지하세요.",
-    category: "소식",
-    image: "/placeholder-blog-1.jpg",
-    url: "/blog/cleaning-service-importance",
-  },
-  {
-    id: 2,
-    title: "에어컨 청소의 필요성",
-    description: "에어컨 청소로 쾌적한 여름을 준비하세요.",
-    category: "소식",
-    image: "/placeholder-blog-2.jpg",
-    url: "/blog/air-conditioner-cleaning-necessity",
-  },
-  {
-    id: 3,
-    title: "입주 청소의 중요성",
-    description: "새 집에서의 첫 인상을 좋게 만드세요.",
-    category: "소식",
-    image: "/placeholder-blog-3.jpg",
-    url: "/blog/move-in-cleaning-importance",
-  },
-  {
-    id: 4,
-    title: "클리닝 서비스의 중요성",
-    description: "정기적인 클리닝으로 건강한 생활 환경을 유지하세요.",
-    category: "소식",
-    image: "/placeholder-blog-1.jpg",
-    url: "/blog/cleaning-service-importance-2",
-  },
-  {
-    id: 5,
-    title: "에어컨 청소의 필요성",
-    description: "에어컨 청소로 쾌적한 여름을 준비하세요.",
-    category: "소식",
-    image: "/placeholder-blog-2.jpg",
-    url: "/blog/air-conditioner-cleaning-necessity-2",
-  },
-  {
-    id: 6,
-    title: "입주 청소의 중요성",
-    description: "새 집에서의 첫 인상을 좋게 만드세요.",
-    category: "소식",
-    image: "/placeholder-blog-3.jpg",
-    url: "/blog/move-in-cleaning-importance-2",
-  },
-];
+// Loading skeleton component
+const BlogLoadingSkeleton = () => {
+  return (
+    <div className="space-y-8">
+      {/* Grid skeleton */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className="bg-gray-100 rounded-lg p-6 animate-pulse">
+            <div className="h-48 bg-gray-200 rounded-lg mb-4"></div>
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+              <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+              <div className="h-3 bg-gray-200 rounded w-full"></div>
+              <div className="h-3 bg-gray-200 rounded w-2/3"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Button skeleton */}
+      <div className="flex justify-center mt-12">
+        <div className="h-12 w-32 bg-gray-200 rounded-btn animate-pulse"></div>
+      </div>
+    </div>
+  );
+};
+
+// Blog content component that handles data fetching
+const BlogContent = async () => {
+  const [initialPosts, totalCount] = await Promise.all([
+    getPublishedBlogPostsWithLimit(20),
+    getPublishedBlogPostsCount(),
+  ]);
+
+  const hasMorePosts = totalCount > 20;
+
+  return (
+    <BlogContentWrapper
+      initialPosts={initialPosts}
+      hasMorePosts={hasMorePosts}
+    />
+  );
+};
 
 const page = async () => {
   return (
@@ -108,24 +102,10 @@ const page = async () => {
           </div>
         </motion.div>
 
-        {/* Blog Grid */}
-        <BlogGrid posts={blogPosts} />
-
-        {/* View All Button */}
-        <motion.div
-          className="flex justify-center mt-12 sm:mt-14 lg:mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          <Button
-            variant="outline"
-            className="px-8 py-3 rounded-btn border-primary text-primary hover:bg-primary hover:text-white transition-colors"
-          >
-            모두 보기
-          </Button>
-        </motion.div>
+        {/* Suspense wrapped content */}
+        <Suspense fallback={<BlogLoadingSkeleton />}>
+          <BlogContent />
+        </Suspense>
       </div>
     </div>
   );

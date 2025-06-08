@@ -101,7 +101,7 @@ const EducationContactSection = () => {
               </div>
               <div className="flex items-center gap-2">
                 <p className="text-base text-text-primary leading-[1.6]">
-                  경기 수원시 권선구 금곡로 219 글림케어
+                  광명시 소하로 190 광명G타워 A동 1005호
                 </p>
                 <button
                   className="w-4 h-4 flex items-center justify-center hover:opacity-70 transition-opacity"
@@ -127,7 +127,7 @@ const EducationContactSection = () => {
         >
           <div className="relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1208.6234405056332!2d126.95443868321522!3d37.2744787089698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6829fd7c9523%3A0x1514775e5d71766d!2z6rK96riw64-EIOyImOybkOyLnCDqtozshKDqtawg6riI6rOh66GcIDIxOQ!5e0!3m2!1sko!2skr!4v1749360946238!5m2!1sko!2skr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.1814337750484!2d126.89489736984616!3d37.445960303905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b610e3f6ab251%3A0x71a1810add3d72a0!2z6rSR66qFR-2DgOybjA!5e0!3m2!1sko!2skr!4v1749377430743!5m2!1sko!2skr"
               className="w-full h-[32rem] rounded-lg border-0"
               allowFullScreen
               loading="lazy"

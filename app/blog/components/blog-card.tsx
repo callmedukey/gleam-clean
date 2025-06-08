@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import * as motion from "motion/react-client";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -27,9 +28,9 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
         href={post.url}
         className="bg-white rounded-lg overflow-hidden border-gray-100 flex flex-col w-full max-w-[23.125rem] h-full hover:shadow-md transition-shadow duration-200 group"
       >
-        {/* Image placeholder - Fixed height */}
+        {/* Blog Image - Fixed height */}
         <motion.div
-          className="relative w-full h-[17rem] bg-gradient-to-br from-blue-100 to-blue-200 flex-shrink-0"
+          className="relative w-full h-[17rem] bg-gradient-to-br from-blue-100 to-blue-200 flex-shrink-0 overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
@@ -39,9 +40,13 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
           }}
           viewport={{ once: true }}
         >
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-            <span className="text-sm">이미지 플레이스홀더</span>
-          </div>
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-fit group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
         </motion.div>
 
         {/* Content - Fixed height with flex layout */}

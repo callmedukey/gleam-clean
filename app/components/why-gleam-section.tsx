@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import arrowIcon from "@/public/images/arrow-icon.svg";
@@ -91,7 +92,6 @@ const WhyGleamSection = () => {
 
           {/* CTA Button */}
           <motion.button
-            className="flex justify-center items-center gap-6 px-7 py-2 bg-accent rounded-[3.125rem] hover:bg-accent/90 transition-colors lg:translate-y-14 xl:translate-x-[calc(50%+2.5rem)]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
@@ -99,18 +99,23 @@ const WhyGleamSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-white font-bold text-[1.44rem] leading-[1.6] text-center">
-              지금 신청하기
-            </span>
-            <div className="flex justify-center items-center p-[0.5625rem] bg-white rounded-full">
-              <Image
-                src={arrowIcon}
-                alt="Arrow"
-                width={14}
-                height={12}
-                className="w-[0.875rem] h-3"
-              />
-            </div>
+            <Link
+              href="/apply-service"
+              className="flex justify-center items-center gap-6 px-7 py-2 bg-accent rounded-[3.125rem] hover:bg-accent/90 transition-colors lg:translate-y-14 xl:translate-x-[calc(50%+2.5rem)]"
+            >
+              <span className="text-white font-bold text-[1.44rem] leading-[1.6] text-center">
+                지금 신청하기
+              </span>
+              <div className="flex justify-center items-center p-[0.5625rem] bg-white rounded-full">
+                <Image
+                  src={arrowIcon}
+                  alt="Arrow"
+                  width={14}
+                  height={12}
+                  className="w-[0.875rem] h-3"
+                />
+              </div>
+            </Link>
           </motion.button>
         </motion.div>
 

@@ -161,6 +161,7 @@ exports.Prisma.BlogPostScalarFieldEnum = {
   content: 'content',
   published: 'published',
   url: 'url',
+  imageId: 'imageId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };

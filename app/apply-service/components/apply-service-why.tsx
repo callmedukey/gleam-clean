@@ -172,7 +172,7 @@ const ApplyServiceWhy = () => {
             className="bg-accent hover:bg-accent/90 text-white rounded-full px-7 py-2 flex items-center gap-6 h-auto"
             asChild
           >
-            <Link href="https://smartstore.naver.com/365homecare/products/10495796237">
+            <Link href="https://smartstore.naver.com/365homecare/products/10488076849">
               <span className="text-xl font-bold leading-[1.6]">신청하기</span>
               <motion.div
                 className="bg-white rounded-full p-[0.5625rem] flex items-center justify-center"
