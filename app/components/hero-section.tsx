@@ -111,9 +111,9 @@ export default function HeroSection() {
           />
           <motion.div
             className="absolute top-0 bottom-0 bg-white px-4 sm:translate-x-36"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 1.0, ease: "backOut" }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             <motion.button
