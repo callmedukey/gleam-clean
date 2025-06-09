@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (update with your actual domain)
+Sitemap: https://gleamcare.co.kr/sitemap.xml
+
+# Common crawl delays (optional)
+# Crawl-delay: 1
+
+# Block specific paths if needed (examples)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /api/
