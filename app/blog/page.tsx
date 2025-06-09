@@ -78,7 +78,7 @@ const page = async () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              블로그
+              소식 및 공지사항
             </motion.p>
             <motion.h1
               className="text-3xl sm:text-4xl lg:text-4xl font-bold text-text-primary leading-[1.6] break-keep"

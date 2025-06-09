@@ -51,7 +51,7 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
 
         {/* Content - Fixed height with flex layout */}
         <motion.div
-          className="p-4 flex flex-col flex-1 gap-4 h-[12.4375rem]"
+          className="p-4 flex flex-col flex-1 gap-4 min-h-[12.4375rem]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
