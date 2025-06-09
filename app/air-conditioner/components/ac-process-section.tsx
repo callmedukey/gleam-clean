@@ -39,7 +39,7 @@ const processSteps: ProcessStep[] = [
   },
   {
     number: "03",
-    title: "천연세제 도포",
+    title: "친환경 세제 도포",
     description: "부품 세척을 위해 천연세제 도포",
     icon: sprayIcon,
   },
