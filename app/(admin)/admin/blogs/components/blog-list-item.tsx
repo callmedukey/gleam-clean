@@ -70,11 +70,7 @@ export function BlogListItem({ blogPost }: BlogListItemProps) {
       </CardContent>
 
       <CardFooter className="p-4 pt-0">
-        <div className="flex items-center justify-between w-full">
-          <div className="text-sm text-muted-foreground">
-            URL: {blogPost.url}
-          </div>
-
+        <div className="flex items-center justify-end w-full">
           <div className="flex items-center gap-2">
             <BlogFormDialog
               blogPost={blogPost}
