@@ -29,7 +29,6 @@ const Footer = () => {
                   src={LogoFooter}
                   alt="Logo"
                   className="w-48 h-36 sm:w-56 sm:h-42 lg:w-64 lg:h-48 object-contain"
-                  quality={100}
                 />
               </div>
 

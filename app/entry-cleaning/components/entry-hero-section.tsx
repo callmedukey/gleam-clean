@@ -105,7 +105,6 @@ const EntryHeroSection = () => {
                 priority
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={100}
               />
             </motion.div>
           </div>

@@ -120,7 +120,6 @@ const EntryFeaturesSection = () => {
                   src={feature.backgroundImage}
                   alt={feature.title}
                   fill
-                  quality={100}
                   className={cn(
                     "object-fit",
                     feature.objectCover &&

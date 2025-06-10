@@ -25,7 +25,6 @@ const MatressHeroSection = () => {
           src={mattressHeroBg}
           alt="매트리스 케어 서비스"
           className="rounded-lg"
-          quality={100}
           priority
         />
       </motion.div>

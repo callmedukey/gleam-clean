@@ -121,7 +121,6 @@ const FeaturesSection = () => {
                   src={feature.backgroundImage}
                   alt={feature.title}
                   fill
-                  quality={100}
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 570px"
                 />
