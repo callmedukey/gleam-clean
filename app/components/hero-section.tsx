@@ -161,7 +161,8 @@ export default function HeroSection() {
               src={HeroImage}
               alt="hero-image"
               className="w-full h-full object-cover"
-              quality={100}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
             />
           </motion.div>
         </motion.div>
