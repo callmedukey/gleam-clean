@@ -44,7 +44,7 @@ export default function Header() {
           <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-nav px-nav-x py-nav-y rounded text-text-primary font-normal text-base leading-text hover:bg-gray-50 transition-colors w-nav-service justify-center">
-                <span className="w-nav-service-text text-center">
+                <span className="w-nav-service-text text-center whitespace-nowrap">
                   서비스 안내
                 </span>
                 <ChevronDown className="w-icon h-icon text-text-primary" />
@@ -91,7 +91,7 @@ export default function Header() {
           <button className="flex items-center gap-nav px-nav-x py-nav-y rounded text-text-primary font-normal text-base leading-text hover:bg-gray-50 transition-colors w-nav-default justify-center">
             <Link href="/apply-service">
               <span
-                className={`text-center ${
+                className={`text-center whitespace-nowrap ${
                   isActiveLink("/apply-service") ? "text-primary" : ""
                 }`}
               >

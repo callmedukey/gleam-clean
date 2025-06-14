@@ -61,23 +61,23 @@
 
   /* Figma Design Font Sizes - GleamCare Typography Scale */
   /* Override Tailwind's default font sizes with Figma values */
-  --text-xs: 0.833rem; /* 13.33px */
+  --text-xs: 0.896rem; /* 14.33px */
   --text-xs--line-height: 1.6;
-  --text-sm: 0.833rem; /* 13.33px */
+  --text-sm: 0.896rem; /* 14.33px */
   --text-sm--line-height: 1.6;
-  --text-base: 1rem; /* 16px */
+  --text-base: 1.063rem; /* 17px */
   --text-base--line-height: 1.6;
-  --text-lg: 1.2rem; /* 19.2px */
+  --text-lg: 1.263rem; /* 20.2px */
   --text-lg--line-height: 1.6;
-  --text-xl: 1.44rem; /* 23.04px */
+  --text-xl: 1.503rem; /* 24.04px */
   --text-xl--line-height: 1.6;
-  --text-2xl: 1.728rem; /* 27.65px */
+  --text-2xl: 1.791rem; /* 28.65px */
   --text-2xl--line-height: 1.6;
-  --text-3xl: 2.074rem; /* 33.18px */
+  --text-3xl: 2.137rem; /* 34.18px */
   --text-3xl--line-height: 1.6;
-  --text-4xl: 2.489rem; /* 39.82px */
+  --text-4xl: 2.552rem; /* 40.82px */
   --text-4xl--line-height: 1.6;
-  --text-5xl: 2.987rem; /* 47.78px */
+  --text-5xl: 3.050rem; /* 48.78px */
   --text-5xl--line-height: 1.6;
 
   /* Figma Design Colors - GleamCare Brand Colors */

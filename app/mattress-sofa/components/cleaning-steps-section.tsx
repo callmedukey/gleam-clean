@@ -122,7 +122,7 @@ const CleaningStepsSection = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, margin: "-100px" }}
     >
-      <div className="max-w-7xl mx-auto border-b border-accent pb-16">
+      <div className="max-w-7xl mx-auto border-accent pb-16">
         {/* Header Section */}
         <motion.div
           className="mb-16 border-t border-accent pt-20"

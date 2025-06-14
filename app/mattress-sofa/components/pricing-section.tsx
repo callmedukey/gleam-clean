@@ -25,6 +25,7 @@ interface PricingTableProps {
   wetPrices: string[];
   images?: any[];
   isMattress?: boolean;
+  extraNotes?: string[];
 }
 
 const PricingTable = ({
@@ -34,6 +35,7 @@ const PricingTable = ({
   wetPrices,
   images,
   isMattress,
+  extraNotes,
 }: PricingTableProps) => {
   return (
     <motion.article
@@ -198,6 +200,30 @@ const PricingTable = ({
           </tbody>
         </table>
       </motion.div>
+
+      {/* Extra notes */}
+      {extraNotes && extraNotes.length > 0 && (
+        <motion.div
+          className="mt-4 space-y-2"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          {extraNotes.map((note, index) => (
+            <motion.p
+              key={index}
+              className="text-xs sm:text-sm text-text-tertiary"
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.9 + index * 0.1, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              {note}
+            </motion.p>
+          ))}
+        </motion.div>
+      )}
     </motion.article>
   );
 };
@@ -237,6 +263,10 @@ const PricingSection = () => {
     wetPrices: ["80,000원", "100,000원", "120,000원", "140,000원", "160,000원"],
     images: [sofaImage1, sofaImage2, sofaImage3, sofaImage4, sofaImage5],
     isMattress: false,
+    extraNotes: [
+      "* 프레임 탈착형 소파의 경우 소파의 크기에 비례하여 추가 비용이 발생합니다.",
+      "* 플로킹 원단(사하라, 샤무드 등)의 경우 소파의 크기에 비례하여 추가 비용이 발생합니다.",
+    ],
   };
 
   const carpetData = {

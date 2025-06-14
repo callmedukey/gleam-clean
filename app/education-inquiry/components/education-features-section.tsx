@@ -211,7 +211,7 @@ const EducationFeaturesSection = () => {
               />
             </div>
             <div className="space-y-3">
-              <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6]">
+              <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6] sm:whitespace-nowrap">
                 고객 중심 서비스 철학
               </h3>
               <p className="text-base text-text-primary leading-[1.6]">
@@ -239,7 +239,7 @@ const EducationFeaturesSection = () => {
               />
             </div>
             <div className="space-y-3">
-              <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6]">
+              <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6] sm:whitespace-nowrap">
                 안정적 수익 창출 사업
               </h3>
               <p className="text-base text-text-primary leading-[1.6]">
@@ -267,7 +267,7 @@ const EducationFeaturesSection = () => {
               />
             </div>
             <div className="space-y-3">
-              <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6]">
+              <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6] sm:whitespace-nowrap">
                 전문적 홈케어 기술
               </h3>
               <p className="text-base text-text-primary leading-[1.6]">
@@ -293,7 +293,7 @@ const EducationFeaturesSection = () => {
               />
             </div>
             <div className="space-y-3">
-              <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6]">
+              <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6] sm:whitespace-nowrap">
                 글림케어만의 체계
               </h3>
               <p className="text-base text-text-primary leading-[1.6]">

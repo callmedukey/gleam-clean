@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import React from "react";
 
+import CleaningFeaturesSection from "./components/cleaning-features-section";
 import CleaningStepsSection from "./components/cleaning-steps-section";
 import MatressHeroSection from "./components/matress-hero-section";
 import PricingSection from "./components/pricing-section";
@@ -18,6 +19,7 @@ const page = () => {
     <main className="min-h-screen">
       <MatressHeroSection />
       <CleaningStepsSection />
+      <CleaningFeaturesSection />
       <PricingSection />
       <ProcessSection />
     </main>

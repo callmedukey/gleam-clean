@@ -145,7 +145,7 @@ export default function HeroSection() {
 
         {/* Hero Image with Dialog */}
         <motion.div
-          className="max-w-6xl mx-auto sm:px-6 mb-6"
+          className="mx-auto sm:px-6 mb-6 w-full max-w-6xl"
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.0, delay: 0.4, ease: "easeOut" }}
