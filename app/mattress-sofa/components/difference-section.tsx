@@ -11,6 +11,14 @@ const DifferenceSection = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, margin: "-100px" }}
     >
+      {/* 분리선 */}
+      <motion.div
+        className="mb-12 h-px w-full max-w-7xl mx-auto bg-[#1E93D3] md:mb-16"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+      />
       <div className="mx-auto max-w-7xl">
         {/* 헤더 섹션 */}
         <div className="mb-12 text-center md:mb-16">
@@ -46,18 +54,9 @@ const DifferenceSection = () => {
           </div>
         </div>
 
-        {/* 분리선 */}
-        <motion.div
-          className="mb-12 h-px w-full bg-[#1E93D3] md:mb-16"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          viewport={{ once: true }}
-        />
-
         {/* 서비스 비교 카드 */}
         <motion.div
-          className="mx-auto flex max-w-5xl flex-col overflow-visible rounded-lg shadow-lg md:flex-row"
+          className="mx-auto flex max-w-5xl flex-col overflow-visible rounded-lg shadow-lg md:flex-row pt-12"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -85,7 +84,7 @@ const DifferenceSection = () => {
               viewport={{ once: true }}
             >
               <div className="rounded-full bg-[#1E93D3] px-8 py-1">
-                <span className="text-lg font-bold text-white md:text-2xl">
+                <span className="text-lg font-bold text-white md:text-2xl px-12">
                   BASIC
                 </span>
               </div>
@@ -102,7 +101,7 @@ const DifferenceSection = () => {
               </motion.h3>
               <ul className="space-y-2">
                 <motion.li
-                  className="text-base font-semibold text-black md:text-xl"
+                  className="text-base font-semibold text-black md:text-lg"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
@@ -111,7 +110,7 @@ const DifferenceSection = () => {
                   강력 진공 흡입
                 </motion.li>
                 <motion.li
-                  className="text-base font-semibold text-black md:text-xl"
+                  className="text-base font-semibold text-black md:text-lg"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 1.1, ease: "easeOut" }}
@@ -145,7 +144,7 @@ const DifferenceSection = () => {
               viewport={{ once: true }}
             >
               <div className="rounded-full bg-[#16A361] px-8 py-1">
-                <span className="text-lg font-bold text-white md:text-2xl">
+                <span className="text-lg font-bold text-white md:text-2xl px-12">
                   PREMIUM
                 </span>
               </div>
@@ -170,7 +169,7 @@ const DifferenceSection = () => {
                 ].map((item, index) => (
                   <motion.li
                     key={index}
-                    className="text-base font-semibold text-black md:text-xl"
+                    className="text-base font-semibold text-black md:text-lg"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{

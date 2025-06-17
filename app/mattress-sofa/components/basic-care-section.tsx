@@ -12,7 +12,7 @@ import kirbyVacuumImage from "@/public/images/mattress-sofa/kirby-vacuum-cleaner
 const BasicCareSection = () => {
   return (
     <motion.section
-      className="py-16 sm:py-20 bg-white"
+      className="pb-16 sm:pb-20 bg-white "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -55,7 +55,7 @@ const BasicCareSection = () => {
           viewport={{ once: true }}
         >
           <div
-            className="grid lg:grid-cols-2 gap-8 lg:gap-[37px] items-center"
+            className="grid lg:grid-cols-2 gap-8 lg:gap-[37px] items-center max-w-7xl mx-auto"
             style={{ minHeight: "592px" }}
           >
             {/* Image Section */}
@@ -66,13 +66,13 @@ const BasicCareSection = () => {
               transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <div className="relative overflow-hidden rounded-lg shadow-[rgba(0,0,0,0.1)_-15px_0px_32px_0px,rgba(0,0,0,0.09)_-59px_0px_59px_0px,rgba(0,0,0,0.05)_-132px_0px_79px_0px,rgba(0,0,0,0.01)_-234px_0px_94px_0px,rgba(0,0,0,0)_-366px_0px_102px_0px]">
-                <div className="relative w-full lg:w-[570px] h-[400px] lg:h-[600px]">
+              <div className="relative overflow-hidden rounded-lg">
+                <div className="relative w-full h-[400px] lg:h-[600px]">
                   <Image
                     src={kirbyVacuumImage}
                     alt="컬비 어벨리어2 진공청소기"
                     fill
-                    className="object-cover"
+                    className="object-cover object-bottom"
                     sizes="(max-width: 1024px) 100vw, 570px"
                     priority
                   />
@@ -156,7 +156,7 @@ const BasicCareSection = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
+              <div className="relative h-[280px] lg:h-[445px] overflow-hidden rounded-md rounded-br-none">
                 <Image
                   src={featurePoint1}
                   alt="초고속 회전 기술"
@@ -206,7 +206,7 @@ const BasicCareSection = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
+              <div className="relative h-[280px] lg:h-[445px] overflow-hidden rounded-md rounded-l-none">
                 <Image
                   src={featurePoint2}
                   alt="고성능 전용 브러시 케어"
@@ -258,7 +258,7 @@ const BasicCareSection = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
+              <div className="relative h-[280px] lg:h-[445px] overflow-hidden rounded-lg rounded-tr-none">
                 <Image
                   src={featurePoint3}
                   alt="전문가용 8겹 필터"
