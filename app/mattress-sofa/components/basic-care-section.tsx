@@ -1,3 +1,6 @@
+"use client";
+
+import * as motion from "motion/react-client";
 import Image from "next/image";
 import React from "react";
 
@@ -8,31 +11,61 @@ import kirbyVacuumImage from "@/public/images/mattress-sofa/kirby-vacuum-cleaner
 
 const BasicCareSection = () => {
   return (
-    <section className="py-16 sm:py-20 bg-white">
+    <motion.section
+      className="py-16 sm:py-20 bg-white"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="px-4">
         {/* Hero Title Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-[33.18px] font-bold text-text-primary mb-2 leading-[1.6]">
+          <motion.h2
+            className="text-2xl sm:text-[33.18px] font-bold text-text-primary mb-2 leading-[1.6]"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             섬세한 공간엔, <span className="text-accent">전문 건식 케어</span>가
             답입니다
-          </h2>
-          <p className="text-sm sm:text-base text-text-primary max-w-3xl mx-auto leading-[1.6]">
+          </motion.h2>
+          <motion.p
+            className="text-sm sm:text-base text-text-primary max-w-3xl mx-auto leading-[1.6]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             건식 청소만으로도 눈에 보이지 않는 미세먼지부터, 집먼지진드기, 가구
             틈새 깊숙한 먼지, 동물의 털,
             <br className="hidden sm:block" />
             각종 알레르기 유발 물질, 그리고 각질과 비듬까지 효과적으로 제거할 수
             있습니다.
-          </p>
+          </motion.p>
         </div>
 
         {/* Vacuum Cleaner Showcase Section */}
-        <div className="bg-[#F5F5F5] rounded-2xl px-8 py-8 lg:px-[135px] mb-16 w-full">
+        <motion.div
+          className="bg-[#F5F5F5] rounded-2xl px-8 py-8 lg:px-[135px] mb-16 w-full"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div
             className="grid lg:grid-cols-2 gap-8 lg:gap-[37px] items-center"
             style={{ minHeight: "592px" }}
           >
             {/* Image Section */}
-            <div className="relative">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <div className="relative overflow-hidden rounded-lg shadow-[rgba(0,0,0,0.1)_-15px_0px_32px_0px,rgba(0,0,0,0.09)_-59px_0px_59px_0px,rgba(0,0,0,0.05)_-132px_0px_79px_0px,rgba(0,0,0,0.01)_-234px_0px_94px_0px,rgba(0,0,0,0)_-366px_0px_102px_0px]">
                 <div className="relative w-full lg:w-[570px] h-[400px] lg:h-[600px]">
                   <Image
@@ -45,10 +78,16 @@ const BasicCareSection = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Features Section */}
-            <div className="space-y-5 lg:w-[518px]">
+            <motion.div
+              className="space-y-5 lg:w-[518px]"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-2xl sm:text-[33.18px] font-bold text-text-primary mb-5 leading-[1.6]">
                 흡입력 끝판왕{" "}
                 <span className="text-accent">&apos;컬비 어벨리어2&apos;</span>
@@ -59,48 +98,64 @@ const BasicCareSection = () => {
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 px-2 py-1 bg-secondary rounded-full flex items-center justify-center min-w-[40px]">
-                    <span className="text-[13.33px] text-white font-normal">
-                      01
-                    </span>
-                  </div>
-                  <p className="text-base sm:text-[19.2px] font-semibold text-text-primary pt-1 leading-[1.6]">
-                    육안으로 보이지 않는 미세먼지, 집먼지진드를 깨끗히 제거
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 px-2 py-1 bg-secondary rounded-full flex items-center justify-center min-w-[40px]">
-                    <span className="text-[13.33px] text-white font-normal">
-                      02
-                    </span>
-                  </div>
-                  <p className="text-base sm:text-[19.2px] font-semibold text-text-primary pt-1 leading-[1.6]">
-                    먼지 재배출 NO, EN1822 11등급의 헤파필터
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 px-2 py-1 bg-secondary rounded-full flex items-center justify-center min-w-[40px]">
-                    <span className="text-[13.33px] text-white font-normal">
-                      03
-                    </span>
-                  </div>
-                  <p className="text-base sm:text-[19.2px] font-semibold text-text-primary pt-1 leading-[1.6]">
-                    가구를 손상시키지 않으면서 먼지를 세심하게 제거
-                  </p>
-                </div>
+                {[
+                  {
+                    num: "01",
+                    text: "육안으로 보이지 않는 미세먼지, 집먼지진드를 깨끗히 제거",
+                  },
+                  {
+                    num: "02",
+                    text: "먼지 재배출 NO, EN1822 11등급의 헤파필터",
+                  },
+                  {
+                    num: "03",
+                    text: "가구를 손상시키지 않으면서 먼지를 세심하게 제거",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-start gap-4"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.7 + index * 0.1,
+                      ease: "easeOut",
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex-shrink-0 px-2 py-1 bg-secondary rounded-full flex items-center justify-center min-w-[40px]">
+                      <span className="text-[13.33px] text-white font-normal">
+                        {item.num}
+                      </span>
+                    </div>
+                    <p className="text-base sm:text-[19.2px] font-semibold text-text-primary pt-1 leading-[1.6]">
+                      {item.text}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Feature Cards Section */}
         <div className="max-w-[1170px] mx-auto">
           {/* Feature Card 1 */}
-          <div className="grid lg:grid-cols-2 items-center">
-            <div className="relative">
+          <motion.div
+            className="grid lg:grid-cols-2 items-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
                 <Image
                   src={featurePoint1}
@@ -110,8 +165,14 @@ const BasicCareSection = () => {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-            </div>
-            <div className="space-y-5 p-6 lg:p-10">
+            </motion.div>
+            <motion.div
+              className="space-y-5 p-6 lg:p-10"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <div className="inline-flex items-center px-6 py-1 bg-secondary rounded-[50px]">
                 <span className="text-base sm:text-[19.2px] font-semibold text-white">
                   POINT 1
@@ -127,12 +188,24 @@ const BasicCareSection = () => {
                 <br />
                 섬유 속 미세먼지와 진드기를 99.7%까지 효과적으로 퇴치합니다.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Feature Card 2 */}
-          <div className="grid lg:grid-cols-2 items-center">
-            <div className="relative lg:order-2">
+          <motion.div
+            className="grid lg:grid-cols-2 items-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="relative lg:order-2"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
                 <Image
                   src={featurePoint2}
@@ -142,8 +215,14 @@ const BasicCareSection = () => {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-            </div>
-            <div className="space-y-5 p-6 lg:p-10 lg:order-1">
+            </motion.div>
+            <motion.div
+              className="space-y-5 p-6 lg:p-10 lg:order-1"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <div className="inline-flex items-center px-6 py-1 bg-secondary rounded-[50px]">
                 <span className="text-base sm:text-[19.2px] font-semibold text-white">
                   POINT 2
@@ -161,12 +240,24 @@ const BasicCareSection = () => {
                 <br />
                 진행합니다.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Feature Card 3 */}
-          <div className="grid lg:grid-cols-2 items-center">
-            <div className="relative">
+          <motion.div
+            className="grid lg:grid-cols-2 items-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
                 <Image
                   src={featurePoint3}
@@ -176,8 +267,14 @@ const BasicCareSection = () => {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-            </div>
-            <div className="space-y-5 p-6 lg:p-10">
+            </motion.div>
+            <motion.div
+              className="space-y-5 p-6 lg:p-10"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <div className="inline-flex items-center px-6 py-1 bg-secondary rounded-[50px]">
                 <span className="text-base sm:text-[19.2px] font-semibold text-white">
                   POINT 3
@@ -192,11 +289,11 @@ const BasicCareSection = () => {
                 <br />
                 집먼지진드기, 꽃가루, 박테리아 등을 99.99% 제거합니다.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
