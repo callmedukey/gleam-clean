@@ -1,6 +1,5 @@
-"use client";
-
 import * as motion from "motion/react-client";
+
 import { CounterNumber } from "./counter-number";
 
 export function UnderFeatureBannerContent() {
