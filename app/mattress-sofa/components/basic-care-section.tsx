@@ -9,11 +9,12 @@ import kirbyVacuumImage from "@/public/images/mattress-sofa/kirby-vacuum-cleaner
 const BasicCareSection = () => {
   return (
     <section className="py-16 sm:py-20 bg-white">
-      <div className="container max-w-[1170px] mx-auto px-4">
+      <div className="px-4">
         {/* Hero Title Section */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-[33.18px] font-bold text-text-primary mb-2 leading-[1.6]">
-            섬세한 공간엔, 전문 건식 케어가 답입니다
+            섬세한 공간엔, <span className="text-accent">전문 건식 케어</span>가
+            답입니다
           </h2>
           <p className="text-sm sm:text-base text-text-primary max-w-3xl mx-auto leading-[1.6]">
             건식 청소만으로도 눈에 보이지 않는 미세먼지부터, 집먼지진드기, 가구
@@ -25,7 +26,7 @@ const BasicCareSection = () => {
         </div>
 
         {/* Vacuum Cleaner Showcase Section */}
-        <div className="bg-[#F5F5F5] rounded-2xl px-8 py-8 lg:px-[135px] mb-16">
+        <div className="bg-[#F5F5F5] rounded-2xl px-8 py-8 lg:px-[135px] mb-16 w-full">
           <div
             className="grid lg:grid-cols-2 gap-8 lg:gap-[37px] items-center"
             style={{ minHeight: "592px" }}
@@ -48,8 +49,9 @@ const BasicCareSection = () => {
 
             {/* Features Section */}
             <div className="space-y-5 lg:w-[518px]">
-              <h3 className="text-2xl sm:text-[33.18px] font-bold text-secondary mb-5 leading-[1.6]">
-                흡입력 끝판왕 &apos;컬비 어벨리어2&apos;
+              <h3 className="text-2xl sm:text-[33.18px] font-bold text-text-primary mb-5 leading-[1.6]">
+                흡입력 끝판왕{" "}
+                <span className="text-accent">&apos;컬비 어벨리어2&apos;</span>
               </h3>
               <p className="text-sm sm:text-base text-text-primary mb-8 leading-[1.6]">
                 글림케어는 업계 최고의 진공청소기로 건식 케어 서비스를
@@ -95,21 +97,21 @@ const BasicCareSection = () => {
         </div>
 
         {/* Feature Cards Section */}
-        <div className="space-y-8">
+        <div className="space-y-8 max-w-[1170px] mx-auto">
           {/* Feature Card 1 */}
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-[45px] items-center">
-            <div className="relative w-full lg:w-[585px] flex-shrink-0">
-              <div className="relative h-[280px] lg:h-[445px] rounded-lg lg:rounded-tl-lg lg:rounded-bl-lg lg:rounded-tr-none lg:rounded-br-lg overflow-hidden">
+          <div className="grid lg:grid-cols-2 items-center">
+            <div className="relative">
+              <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
                 <Image
                   src={featurePoint1}
                   alt="초고속 회전 기술"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 585px"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
-            <div className="flex-1 space-y-5 px-4 lg:px-0">
+            <div className="space-y-5 p-6 lg:p-10">
               <div className="inline-flex items-center px-6 py-1 bg-secondary rounded-[50px]">
                 <span className="text-base sm:text-[19.2px] font-semibold text-white">
                   POINT 1
@@ -129,19 +131,19 @@ const BasicCareSection = () => {
           </div>
 
           {/* Feature Card 2 */}
-          <div className="flex flex-col lg:flex-row-reverse gap-6 lg:gap-[43px] items-center lg:pl-10">
-            <div className="relative w-full lg:w-[585px] flex-shrink-0">
-              <div className="relative h-[280px] lg:h-[445px] rounded-lg lg:rounded-tr-lg lg:rounded-br-lg lg:rounded-tl-none lg:rounded-bl-lg overflow-hidden">
+          <div className="grid lg:grid-cols-2 items-center">
+            <div className="relative lg:order-2">
+              <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
                 <Image
                   src={featurePoint2}
                   alt="고성능 전용 브러시 케어"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 585px"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
-            <div className="flex-1 space-y-5 px-4 lg:px-0">
+            <div className="space-y-5 p-6 lg:p-10 lg:order-1">
               <div className="inline-flex items-center px-6 py-1 bg-secondary rounded-[50px]">
                 <span className="text-base sm:text-[19.2px] font-semibold text-white">
                   POINT 2
@@ -163,19 +165,19 @@ const BasicCareSection = () => {
           </div>
 
           {/* Feature Card 3 */}
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-[45px] items-center">
-            <div className="relative w-full lg:w-[585px] flex-shrink-0">
-              <div className="relative h-[280px] lg:h-[445px] rounded-lg lg:rounded-tl-lg lg:rounded-tr-none lg:rounded-br-lg lg:rounded-bl-lg overflow-hidden">
+          <div className="grid lg:grid-cols-2 items-center">
+            <div className="relative">
+              <div className="relative h-[280px] lg:h-[445px] overflow-hidden">
                 <Image
                   src={featurePoint3}
                   alt="전문가용 8겹 필터"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 585px"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
-            <div className="flex-1 space-y-5 px-4 lg:px-0">
+            <div className="space-y-5 p-6 lg:p-10">
               <div className="inline-flex items-center px-6 py-1 bg-secondary rounded-[50px]">
                 <span className="text-base sm:text-[19.2px] font-semibold text-white">
                   POINT 3
