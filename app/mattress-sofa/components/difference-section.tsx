@@ -56,7 +56,7 @@ const DifferenceSection = () => {
 
         {/* 서비스 비교 카드 */}
         <motion.div
-          className="mx-auto flex max-w-5xl flex-col overflow-visible rounded-lg shadow-lg md:flex-row pt-12"
+          className="mx-auto flex max-w-5xl flex-col overflow-visible rounded-lg md:flex-row pt-12"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
