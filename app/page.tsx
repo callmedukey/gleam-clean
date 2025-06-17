@@ -1,8 +1,8 @@
 import HeroSection from "@/app/components/hero-section";
 
-import BeforeAfterSection from "./components/before-after-section";
 import FeaturesSection from "./components/features-section";
 import KeyFeaturesSection from "./components/key-features-section";
+import StartWithGleam from "./components/start-with-gleam";
 import UnderFeatureBanner from "./components/under-feature-banner";
 import UnderHeroBanner from "./components/under-hero-banner";
 import WhyGleamSection from "./components/why-gleam-section";
@@ -16,7 +16,7 @@ export default async function Home() {
       <UnderHeroBanner />
       <FeaturesSection />
       <UnderFeatureBanner />
-      <BeforeAfterSection />
+      <StartWithGleam />
       <KeyFeaturesSection />
       <WhyGleamSection />
     </main>
