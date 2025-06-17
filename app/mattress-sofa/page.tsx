@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import React from "react";
 
+import BasicCareSection from "./components/basic-care-section";
 import CleaningFeaturesSection from "./components/cleaning-features-section";
-import CleaningStepsSection from "./components/cleaning-steps-section";
+import DifferenceSection from "./components/difference-section";
 import MatressHeroSection from "./components/matress-hero-section";
 import PricingSection from "./components/pricing-section";
 import ProcessSection from "./components/process-section";
@@ -18,7 +19,9 @@ const page = () => {
   return (
     <main className="min-h-screen">
       <MatressHeroSection />
-      <CleaningStepsSection />
+      <DifferenceSection />
+      <BasicCareSection />
+      {/* <CleaningStepsSection /> */}
       <CleaningFeaturesSection />
       <PricingSection />
       <ProcessSection />
