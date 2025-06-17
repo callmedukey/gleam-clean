@@ -97,7 +97,7 @@ const BasicCareSection = () => {
         </div>
 
         {/* Feature Cards Section */}
-        <div className="space-y-8 max-w-[1170px] mx-auto">
+        <div className="max-w-[1170px] mx-auto">
           {/* Feature Card 1 */}
           <div className="grid lg:grid-cols-2 items-center">
             <div className="relative">
