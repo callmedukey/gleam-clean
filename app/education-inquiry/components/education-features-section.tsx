@@ -193,7 +193,7 @@ const EducationFeaturesSection = () => {
         </div>
 
         {/* Key Points Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-[1.875rem]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-[1.875rem] **:break-keep">
           {/* Point 1 */}
           <motion.div
             className="flex flex-col items-center text-center space-y-8 lg:space-y-[1.875rem] p-2 lg:p-10"
@@ -270,8 +270,9 @@ const EducationFeaturesSection = () => {
               <h3 className="text-lg lg:text-xl font-bold text-secondary leading-[1.6] sm:whitespace-nowrap">
                 전문적 홈케어 기술
               </h3>
-              <p className="text-base text-text-primary leading-[1.6]">
-                가구 및 에어컨 유형별 맞춤 청소법등 관리 노하우 완벽 습득
+              <p className="text-base text-text-primary leading-[1.6] sm:whitespace-nowrap">
+                가구 및 에어컨 유형별 맞춤 <br /> 청소법 등 관리 노하우 완벽
+                습득
               </p>
             </div>
           </motion.div>

@@ -10,7 +10,8 @@
     "db:generate": "npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "generate:og-image": "tsx scripts/generate-og-image.ts"
   },
   "prisma": {
     "schema": "./prisma/schema",

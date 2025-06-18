@@ -39,17 +39,7 @@ const DifferenceSection = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              보이지 않는 곳까지, 최고의 전문장비로 박테리아를 완벽하게 제거
-            </motion.p>
-            <motion.p
-              className="text-sm text-[#2D3E50] md:text-base"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              클리닝 순서는 [건식 케어 - 친환경 세제 도포 - 스팀 케어 - 습식
-              케어 - 살균 소독]으로 총 5단계로 진행됩니다.
+              보이지 않는 곳까지, 최고의 전문장비로 박테리아를 완벽하게 케어
             </motion.p>
           </div>
         </div>
@@ -162,9 +152,9 @@ const DifferenceSection = () => {
               <ul className="space-y-2">
                 {[
                   "강력 진공 흡입",
-                  "천연 세제 도포",
+                  "친환경 세제 도포",
                   "고온 스팀 케어",
-                  "습식 딥클리닝",
+                  "습식 딥 클리닝",
                   "3단계 살균 소독",
                 ].map((item, index) => (
                   <motion.li

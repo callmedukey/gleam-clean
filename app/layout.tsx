@@ -62,6 +62,34 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  openGraph: {
+    title: "글림케어 - 빛나는 깨끗함, 당신의 공간에",
+    description:
+      "글림케어는 매트리스, 소파, 에어컨 청소부터 입주 청소까지 제공하는 전문 청소 서비스입니다. 집과 사무실을 새롭게 만들어드리며, 합리적인 가격으로 최상의 만족을 경험하세요.",
+    type: "website",
+    locale: "ko_KR",
+    url: "https://gleamcare.co.kr",
+    siteName: "글림케어",
+    images: [
+      {
+        url: "/images/og-image.png", // You'll need to add this image
+        width: 1200,
+        height: 630,
+        alt: "글림케어 - 전문 청소 서비스",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "글림케어 - 빛나는 깨끗함, 당신의 공간에",
+    description:
+      "글림케어는 매트리스, 소파, 에어컨 청소부터 입주 청소까지 제공하는 전문 청소 서비스입니다.",
+    images: ["/images/og-image.png"], // Same image as OpenGraph
+    creator: "@gleamcare", // Replace with actual Twitter handle if exists
+  },
+  alternates: {
+    canonical: "https://gleamcare.co.kr",
+  },
   other: {
     "naver-site-verification": "e188b72fc98bbdc1c86a82729e7dae5f499a770f",
   },

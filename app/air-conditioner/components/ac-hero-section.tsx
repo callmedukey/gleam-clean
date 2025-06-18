@@ -39,11 +39,11 @@ const ACHeroSection = () => {
           viewport={{ once: true }}
         >
           <span className="text-accent">에어컨 청소</span>, 아직 미루고
-          계신가요?
+          계시나요?
         </motion.h1>
 
         <motion.p
-          className="text-base font-normal leading-[1.6] text-text-primary max-w-3xl break-keep"
+          className="text-base font-normal leading-[1.6] text-text-primary max-w-4xl break-keep"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}

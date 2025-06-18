@@ -18,8 +18,8 @@ const adminLinks = [
     icon: "🏢",
   },
   {
-    label: "블로그 관리",
-    href: "/admin/blogs",
+    label: "게시판 관리",
+    href: "/admin/notices",
     icon: "📝",
   },
   {

@@ -101,7 +101,7 @@ const BasicCareSection = () => {
                 {[
                   {
                     num: "01",
-                    text: "육안으로 보이지 않는 미세먼지, 집먼지진드를 깨끗히 제거",
+                    text: "육안으로 보이지 않는 미세먼지, 집먼지진드를 깨끗이 제거",
                   },
                   {
                     num: "02",
@@ -285,9 +285,8 @@ const BasicCareSection = () => {
               </h4>
               <p className="text-sm sm:text-base text-text-primary leading-[1.6]">
                 총 8겹 필터가 적용된 전문 장비로, 뛰어난 집진력과 공기정화
-                기능을 통해 실내 초미세먼지,
-                <br />
-                집먼지진드기, 꽃가루, 박테리아 등을 99.99% 제거합니다.
+                기능을 통해 실내 초미세먼지, 집먼지진드기, 꽃가루, 박테리아 등을
+                99.99% 제거합니다.
               </p>
             </motion.div>
           </motion.div>

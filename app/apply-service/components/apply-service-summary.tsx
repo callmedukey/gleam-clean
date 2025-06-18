@@ -256,7 +256,7 @@ const ApplyServiceSummary = () => {
         { icon: mattressIcon, label: "매트리스" },
         { icon: couchIcon, label: "소파" },
         { icon: chairIcon, label: "의자" },
-        { icon: carpetIcon, label: "카페트" },
+        { icon: carpetIcon, label: "카펫" },
       ],
       features: [
         {
@@ -298,7 +298,7 @@ const ApplyServiceSummary = () => {
         },
         {
           number: "03",
-          description: "가구 오염, 얼룩 등 확실히 제거해주는 풀 코스",
+          description: "가구 오염, 얼룩 등 확실히 제거해 주는 풀코스",
         },
       ],
     },
@@ -313,7 +313,7 @@ const ApplyServiceSummary = () => {
       icons: [
         { icon: airConditionerIcon, label: "분해 청소" },
         { icon: powerWashingIcon, label: "고압 세척" },
-        { icon: cleanIcon, label: "전부품 청소" },
+        { icon: cleanIcon, label: "전 부품 청소" },
       ],
       features: [
         {
@@ -322,7 +322,7 @@ const ApplyServiceSummary = () => {
         },
         {
           number: "02",
-          description: "인체에 무핸한 친환경 천연세제 사용",
+          description: "인체에 무해한 친환경 친환경 세제 사용",
         },
         {
           number: "03",

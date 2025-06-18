@@ -24,32 +24,32 @@ const services = [
   },
   {
     id: "02",
-    title: "싱크대 전체청소",
+    title: "싱크대 전체 청소",
     description: "후드•가스렌지 기름때 제거",
     icon: KitchenIcon,
   },
   {
     id: "03",
-    title: "화장실 전체청소",
+    title: "화장실 전체 청소",
     description: "세면대, 변기, 샤워실, 천장, 벽",
     icon: ToiletIcon,
   },
   {
     id: "04",
-    title: "붙박이장 전체청소",
+    title: "붙박이장 전체 청소",
     description: "붙박이장 내외부 청소",
     icon: DrawersIcon,
   },
   {
     id: "05",
     title: "배수구 청소",
-    description: "배수구 분리청소",
+    description: "배수구 분리 청소",
     icon: DrainIcon,
   },
   {
     id: "06",
     title: "컨센트 청소",
-    description: "컨센트 내부•주변 먼지 제거",
+    description: "콘센트 내부•주변 먼지 제거",
     icon: SocketIcon,
   },
   {

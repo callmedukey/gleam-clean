@@ -270,7 +270,7 @@ const PricingSection = () => {
   };
 
   const carpetData = {
-    title: "카페트 가격표",
+    title: "카펫 가격표",
     categories: [
       { name: "2m 이내", description: "" },
       { name: "3m 이내", description: "" },

@@ -52,7 +52,7 @@ const ACFeaturesSection = () => {
       ],
     },
     {
-      title: "고압세척으로 깊은 미세공간까지 해결",
+      title: "고압세척으로 깊은 미세 공간까지 해결",
       subtitle: "열교환기와 냉각핀, 에어컨 주기적 청소의 핵심",
       description:
         "곰팡이, 세균, 박테리아가 번식하기 좋은 깊숙한 곳까지 글림케어는 완전 분해 후 종합 세척 (세제 도포와 고압 세척)으로 철저한 에어컨 청소 서비스를 제공합니다.",
@@ -60,7 +60,7 @@ const ACFeaturesSection = () => {
       imagePosition: "right",
       points: [
         { number: "01", text: "고압 세척으로 이물질 철저히 제거" },
-        { number: "02", text: "미세공간부터 숨겨진 오염까지 완벽하게 해결" },
+        { number: "02", text: "미세 공간부터 숨겨진 오염까지 완벽하게 해결" },
         {
           number: "03",
           text: "고압 세척만으로 냉방 효율 극대화와 건강한 실내 공기 제공",

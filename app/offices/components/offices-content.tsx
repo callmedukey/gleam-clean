@@ -74,7 +74,7 @@ export const OfficesContent = async () => {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            서비스 가능 지역과 지점 정보를 안내해드립니다.
+            서비스 가능 지역과 지점 정보를 안내해 드립니다.
           </motion.p>
         </motion.div>
 

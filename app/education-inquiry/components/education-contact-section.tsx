@@ -28,7 +28,7 @@ const EducationContactSection = () => {
               연락처 안내
             </h2>
             <p className="text-base text-text-primary leading-[1.6] break-keep">
-              교육에 관한 문의는 아래 연락처로 편하게 연락주시기 바랍니다
+              교육에 관한 문의는 아래 연락처로 편하게 연락 주시기 바랍니다
             </p>
           </div>
 

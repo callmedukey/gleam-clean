@@ -30,7 +30,7 @@ const disinfectionSteps = [
     title: "피톤치드 방역",
     description:
       "자연의 강력한 항균 물질인 피톤치드를 공기 중에 분사하여 세균, 곰팡이, 바이러스를 박멸하고, 악취를 제거해 실내 공기를 상쾌하게 유지합니다.",
-    tags: ["초강력 향균", "심리적 안정감은 PLUS"],
+    tags: ["초강력 항균", "심리적 안정감은 PLUS"],
     bgColor: "bg-green-100",
     image: step5PhytoncideImage,
   },

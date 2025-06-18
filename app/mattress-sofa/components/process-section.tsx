@@ -55,21 +55,22 @@ const processSteps: ProcessStep[] = [
     number: "04",
     title: "오점(얼룩) 제거",
     description:
-      "얼룩 유형 파악하고 적합한 천연세제 배합 및 도포하여 얼룩 제거",
+      "얼룩 유형 파악하고 적합한 친환경 세제 배합 및 도포하여 얼룩 제거",
     type: "premium",
     icon: noStainIcon,
   },
   {
     number: "05",
     title: "전체 스팀 클리닝",
-    description: "섬유 깊숙히 침투한 진드기 등을 고온 스팀 클리닝으로 박멸",
+    description: "섬유 깊숙이 침투한 진드기 등을 고온 스팀 클리닝으로 박멸",
     type: "premium",
     icon: steamCleanIcon,
   },
   {
     number: "06",
     title: "전체 습식 클리닝",
-    description: "가구 원단에 적합한 천연세제 배합 및 도포 후 습식 클리닝 진행",
+    description:
+      "가구 원단에 적합한 친환경 세제 배합 및 도포 후 습식 클리닝 진행",
     type: "premium",
     icon: cleaningLiquidIcon,
   },
@@ -99,7 +100,7 @@ const processSteps: ProcessStep[] = [
     number: "10",
     title: "피톤치드 방역",
     description:
-      "피톤치드 방역을 활용하여 향균, 탈취 효과 등 주변 환경을 깨끗하게 정화",
+      "피톤치드 방역을 활용하여 항균, 탈취 효과 등 주변 환경을 깨끗하게 정화",
     type: "basic",
     icon: leafIcon,
   },
