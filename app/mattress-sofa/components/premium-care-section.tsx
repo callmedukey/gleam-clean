@@ -54,17 +54,17 @@ const PremiumCareSection = () => {
                 <div className="w-full lg:w-1/2 lg:flex-1 space-y-6 lg:mt-16">
                   <div className="space-y-5 xl:translate-x-12">
                     <h3 className="text-[#166DA3] text-2xl lg:text-3xl font-bold leading-[1.6]">
-                      성분 걱정 없는 100% 천연 세제 사용
+                      성분 걱정 없는 100% 친환경 세제 사용
                     </h3>
                     <div className="space-y-4">
                       <h4 className="text-[#2D3E50] text-lg lg:text-xl font-semibold leading-[1.6]">
                         안전함과 세정력, 두 가지 모두를 만족시키는 클리닝 솔루션
                       </h4>
                       <p className="text-[#2D3E50] text-base leading-[1.6]">
-                        인체에 무해한 천연 성분, 환경까지 생각한 안전한 클리닝.
-                        하지만 세정력은 절대 양보하지 않습니다. 글림케어는 pH
-                        균형을 고려한 친환경 세제로 보이지 않는 오염까지 말끔히
-                        제거합니다.
+                        인체에 무해한 친환경 성분, 환경까지 생각한 안전한
+                        클리닝. 하지만 세정력은 절대 양보하지 않습니다.
+                        글림케어는 pH 균형을 고려한 친환경 세제로 보이지 않는
+                        오염까지 말끔히 제거합니다.
                       </p>
                     </div>
                   </div>

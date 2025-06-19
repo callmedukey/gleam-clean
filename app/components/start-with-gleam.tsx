@@ -116,7 +116,7 @@ const StartWithGleam = () => {
                 만족으로 끝나는 체계적인 서비스
               </h2>
               <h3 className="text-lg sm:text-xl lg:text-[1.2rem] font-semibold leading-[1.6] text-black">
-                어디서든 한결같이, 믿고 맡길 수 있는 클리닝 서비스.
+                어디서든 한결같이, 믿고 맡길 수 있는 클리닝 서비스
               </h3>
               <p className="text-sm sm:text-base leading-[1.6] text-black">
                 처음부터 끝까지 고객님의 만족을 최우선으로 생각하며,

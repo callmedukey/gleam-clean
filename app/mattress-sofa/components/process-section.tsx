@@ -40,7 +40,7 @@ const processSteps: ProcessStep[] = [
     number: "02",
     title: "뒷측면 건식 클리닝",
     description:
-      "1분당 4,000번 회전하는 짚 브러시로 가구의 뒷면, 측면 건식 클리닝",
+      "1분당 4,000번 회전하는 브러시로 가구의 뒷면, 측면 건식 클리닝",
     type: "basic",
     icon: spinBrushIcon,
   },
@@ -77,7 +77,7 @@ const processSteps: ProcessStep[] = [
   {
     number: "07",
     title: "중화 및 탈수 작업",
-    description: "중화작업 진행 후 천연 레몬오일 희석 후 탈수 작업 진행",
+    description: "중화작업 진행 후 친환경 레몬오일 희석 후 탈수 작업 진행",
     type: "premium",
     icon: lemonIcon,
   },

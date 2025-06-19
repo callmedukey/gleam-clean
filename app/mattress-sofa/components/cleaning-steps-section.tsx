@@ -135,7 +135,7 @@ const CleaningStepsSection = () => {
             총 5단계로 이루어지는 완성도 높은 클리닝
           </h2>
           <p className="text-text-primary font-semibold text-lg lg:text-xl leading-[1.6] mb-2">
-            보이지 않는 곳까지, 최고의 전문장비로 박테리아를 완벽하게 제거
+            보이지 않는 곳까지, 최고의 전문장비로 완벽하게 제거
           </p>
           <p className="text-text-primary text-base leading-[1.6] max-w-4xl">
             클리닝 순서는 [건식 케어 - 친환경 세제 도포 - 스팀 케어 - 습식 케어

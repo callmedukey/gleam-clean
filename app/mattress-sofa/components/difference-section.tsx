@@ -39,7 +39,7 @@ const DifferenceSection = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              보이지 않는 곳까지, 최고의 전문장비로 박테리아를 완벽하게 케어
+              보이지 않는 곳까지, 최고의 전문장비로 완벽하게 케어
             </motion.p>
           </div>
         </div>

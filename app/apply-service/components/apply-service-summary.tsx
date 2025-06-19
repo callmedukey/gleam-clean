@@ -285,7 +285,7 @@ const ApplyServiceSummary = () => {
         { icon: mattressIcon, label: "매트리스" },
         { icon: couchIcon, label: "소파" },
         { icon: chairIcon, label: "의자" },
-        { icon: carpetIcon, label: "카페트" },
+        { icon: carpetIcon, label: "카펫" },
       ],
       features: [
         {
