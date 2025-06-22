@@ -5,6 +5,7 @@ import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
 import { Toaster } from "sonner";
 
+import FloatingInquiryButton from "@/components/floating-inquiry-button";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
@@ -106,6 +107,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <FloatingInquiryButton />
         <Toaster />
         {process.env.NODE_ENV === "development" && (
           <StagewiseToolbar config={stagewiseConfig} />

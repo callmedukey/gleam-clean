@@ -3,9 +3,7 @@
 import { Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
-import InquiryDialog from "@/app/components/inquiry-dialog";
 import BlogIcon from "@/public/icons/jt-naver-blog.svg";
 import KakaoIcon from "@/public/icons/sns_kakao.svg";
 import YoutubeIcon from "@/public/icons/sns_youtube.svg";
@@ -14,7 +12,6 @@ import LogoFooter from "@/public/images/logo-footer.png";
 import FooterLegalLinks from "./footer-legal-links";
 
 const Footer = () => {
-  const [isInquiryDialogOpen, setIsInquiryDialogOpen] = useState(false);
 
   return (
     <>
@@ -95,16 +92,6 @@ const Footer = () => {
                     영업시간 09:00 ~ 21:00
                   </span>
                 </div>
-
-                {/* Contact Button */}
-                <div className="flex justify-center items-center gap-2">
-                  <button
-                    onClick={() => setIsInquiryDialogOpen(true)}
-                    className="bg-accent text-white px-4 py-1 lg:px-6 lg:py-1 rounded-full text-sm lg:text-base hover:bg-secondary transition-colors"
-                  >
-                    문의하기
-                  </button>
-                </div>
               </div>
 
               {/* Social Media Icons */}
@@ -165,12 +152,6 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-
-      {/* Inquiry Dialog */}
-      <InquiryDialog
-        open={isInquiryDialogOpen}
-        onOpenChange={setIsInquiryDialogOpen}
-      />
     </>
   );
 };
