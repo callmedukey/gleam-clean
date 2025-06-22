@@ -38,23 +38,14 @@ export function OfficeFormDialog({ office, trigger }: OfficeFormDialogProps) {
     reset,
   } = useForm<CreateOfficeInput>({
     resolver: zodResolver(createOfficeSchema),
-    defaultValues: office
-      ? {
-          name: office.name,
-          address: office.address,
-          phone: office.phone,
-          hours: office.hours,
-          mapUrl: office.mapUrl,
-          order: office.order,
-        }
-      : {
-          name: "",
-          address: "",
-          phone: "",
-          hours: "",
-          mapUrl: "",
-          order: 0,
-        },
+    defaultValues: {
+      name: office?.name ?? "",
+      address: office?.address ?? "",
+      phone: office?.phone ?? "",
+      hours: office?.hours ?? "",
+      mapUrl: office?.mapUrl ?? "",
+      order: office?.order ?? 0,
+    },
   });
 
   const onSubmit = (data: CreateOfficeInput) => {
@@ -165,7 +156,7 @@ export function OfficeFormDialog({ office, trigger }: OfficeFormDialogProps) {
             <Input
               id="order"
               type="number"
-              {...register("order", { valueAsNumber: true })}
+              {...register("order")}
               placeholder="0"
             />
             {errors.order && (
