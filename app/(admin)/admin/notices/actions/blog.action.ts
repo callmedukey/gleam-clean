@@ -74,7 +74,7 @@ export async function createBlogPost(formData: FormData) {
       },
     });
 
-    revalidatePath("/admin/blogs");
+    revalidatePath("/admin/notices");
     revalidatePath("/blog");
 
     return blogPost;
@@ -158,7 +158,7 @@ export async function updateBlogPost(formData: FormData) {
       },
     });
 
-    revalidatePath("/admin/blogs");
+    revalidatePath("/admin/notices");
     revalidatePath("/blog");
 
     return blogPost;
@@ -174,7 +174,7 @@ export async function deleteBlogPost(id: string) {
       where: { id },
     });
 
-    revalidatePath("/admin/blogs");
+    revalidatePath("/admin/notices");
     revalidatePath("/blog");
   } catch (error) {
     console.error("블로그 포스트 삭제 오류:", error);
@@ -199,7 +199,7 @@ export async function toggleBlogPostPublished(id: string) {
       },
     });
 
-    revalidatePath("/admin/blogs");
+    revalidatePath("/admin/notices");
     revalidatePath("/blog");
 
     return updatedPost;

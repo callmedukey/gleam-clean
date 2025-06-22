@@ -2,6 +2,7 @@
 
 import { Upload, X } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { ReactNode, useState, useTransition } from "react";
 import { toast } from "sonner";
 
@@ -45,6 +46,7 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
     blogPost?.image?.url || null
   );
   const [errors, setErrors] = useState<Record<string, string[]>>({});
+  const router = useRouter();
 
   const [formData, setFormData] = useState<FormData>({
     title: blogPost?.title || "",
@@ -168,6 +170,7 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
         }
 
         setOpen(false);
+        router.refresh();
         // Reset form
         setFormData({
           title: "",

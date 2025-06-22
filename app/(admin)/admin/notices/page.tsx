@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { BlogFormDialog } from "./components/blog-form-dialog";
 import { BlogList } from "./components/blog-list";
 
+export const dynamic = "force-dynamic";
+
 export default function BlogsPage() {
   return (
     <div className="container mx-auto py-6 space-y-6">

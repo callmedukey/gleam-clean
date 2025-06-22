@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { ReactNode, useState, useTransition } from "react";
 import { toast } from "sonner";
 
@@ -28,6 +29,7 @@ interface DeleteBlogDialogProps {
 export function DeleteBlogDialog({ trigger, blogPost }: DeleteBlogDialogProps) {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const handleDelete = () => {
     startTransition(async () => {
@@ -35,6 +37,7 @@ export function DeleteBlogDialog({ trigger, blogPost }: DeleteBlogDialogProps) {
         await deleteBlogPost(blogPost.id);
         toast.success("블로그 포스트가 삭제되었습니다");
         setOpen(false);
+        router.refresh();
       } catch (error) {
         console.error(error);
         toast.error("블로그 포스트 삭제에 실패했습니다");
