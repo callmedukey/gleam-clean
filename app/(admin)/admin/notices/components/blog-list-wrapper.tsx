@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -24,6 +24,12 @@ export function BlogListWrapper({
   const [posts, setPosts] = useState(initialPosts);
   const [currentPage, setCurrentPage] = useState(1);
   const [isPending, startTransition] = useTransition();
+
+  // Update posts when initialPosts changes (e.g., after creating/updating/deleting)
+  useEffect(() => {
+    setPosts(initialPosts);
+    setCurrentPage(1); // Reset to first page when data changes
+  }, [initialPosts]);
 
   const handlePageChange = (page: number) => {
     if (page < 1 || page > totalPages || page === currentPage) return;
