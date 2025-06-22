@@ -2734,8 +2734,18 @@ export namespace Prisma {
 
   export type AggregateOffice = {
     _count: OfficeCountAggregateOutputType | null
+    _avg: OfficeAvgAggregateOutputType | null
+    _sum: OfficeSumAggregateOutputType | null
     _min: OfficeMinAggregateOutputType | null
     _max: OfficeMaxAggregateOutputType | null
+  }
+
+  export type OfficeAvgAggregateOutputType = {
+    order: number | null
+  }
+
+  export type OfficeSumAggregateOutputType = {
+    order: number | null
   }
 
   export type OfficeMinAggregateOutputType = {
@@ -2745,6 +2755,7 @@ export namespace Prisma {
     phone: string | null
     hours: string | null
     mapUrl: string | null
+    order: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2756,6 +2767,7 @@ export namespace Prisma {
     phone: string | null
     hours: string | null
     mapUrl: string | null
+    order: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2767,11 +2779,20 @@ export namespace Prisma {
     phone: number
     hours: number
     mapUrl: number
+    order: number
     createdAt: number
     updatedAt: number
     _all: number
   }
 
+
+  export type OfficeAvgAggregateInputType = {
+    order?: true
+  }
+
+  export type OfficeSumAggregateInputType = {
+    order?: true
+  }
 
   export type OfficeMinAggregateInputType = {
     id?: true
@@ -2780,6 +2801,7 @@ export namespace Prisma {
     phone?: true
     hours?: true
     mapUrl?: true
+    order?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -2791,6 +2813,7 @@ export namespace Prisma {
     phone?: true
     hours?: true
     mapUrl?: true
+    order?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -2802,6 +2825,7 @@ export namespace Prisma {
     phone?: true
     hours?: true
     mapUrl?: true
+    order?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -2845,6 +2869,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: OfficeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: OfficeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: OfficeMinAggregateInputType
@@ -2875,6 +2911,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: OfficeCountAggregateInputType | true
+    _avg?: OfficeAvgAggregateInputType
+    _sum?: OfficeSumAggregateInputType
     _min?: OfficeMinAggregateInputType
     _max?: OfficeMaxAggregateInputType
   }
@@ -2886,9 +2924,12 @@ export namespace Prisma {
     phone: string
     hours: string
     mapUrl: string
+    order: number
     createdAt: Date
     updatedAt: Date
     _count: OfficeCountAggregateOutputType | null
+    _avg: OfficeAvgAggregateOutputType | null
+    _sum: OfficeSumAggregateOutputType | null
     _min: OfficeMinAggregateOutputType | null
     _max: OfficeMaxAggregateOutputType | null
   }
@@ -2914,6 +2955,7 @@ export namespace Prisma {
     phone?: boolean
     hours?: boolean
     mapUrl?: boolean
+    order?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["office"]>
@@ -2925,6 +2967,7 @@ export namespace Prisma {
     phone?: boolean
     hours?: boolean
     mapUrl?: boolean
+    order?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["office"]>
@@ -2936,6 +2979,7 @@ export namespace Prisma {
     phone?: boolean
     hours?: boolean
     mapUrl?: boolean
+    order?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["office"]>
@@ -2947,11 +2991,12 @@ export namespace Prisma {
     phone?: boolean
     hours?: boolean
     mapUrl?: boolean
+    order?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type OfficeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "address" | "phone" | "hours" | "mapUrl" | "createdAt" | "updatedAt", ExtArgs["result"]["office"]>
+  export type OfficeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "address" | "phone" | "hours" | "mapUrl" | "order" | "createdAt" | "updatedAt", ExtArgs["result"]["office"]>
 
   export type $OfficePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Office"
@@ -2963,6 +3008,7 @@ export namespace Prisma {
       phone: string
       hours: string
       mapUrl: string
+      order: number
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["office"]>
@@ -3394,6 +3440,7 @@ export namespace Prisma {
     readonly phone: FieldRef<"Office", 'String'>
     readonly hours: FieldRef<"Office", 'String'>
     readonly mapUrl: FieldRef<"Office", 'String'>
+    readonly order: FieldRef<"Office", 'Int'>
     readonly createdAt: FieldRef<"Office", 'DateTime'>
     readonly updatedAt: FieldRef<"Office", 'DateTime'>
   }
@@ -4949,8 +4996,18 @@ export namespace Prisma {
 
   export type AggregateBlogPost = {
     _count: BlogPostCountAggregateOutputType | null
+    _avg: BlogPostAvgAggregateOutputType | null
+    _sum: BlogPostSumAggregateOutputType | null
     _min: BlogPostMinAggregateOutputType | null
     _max: BlogPostMaxAggregateOutputType | null
+  }
+
+  export type BlogPostAvgAggregateOutputType = {
+    order: number | null
+  }
+
+  export type BlogPostSumAggregateOutputType = {
+    order: number | null
   }
 
   export type BlogPostMinAggregateOutputType = {
@@ -4959,6 +5016,7 @@ export namespace Prisma {
     badge: string | null
     content: string | null
     published: boolean | null
+    order: number | null
     url: string | null
     imageId: string | null
     createdAt: Date | null
@@ -4971,6 +5029,7 @@ export namespace Prisma {
     badge: string | null
     content: string | null
     published: boolean | null
+    order: number | null
     url: string | null
     imageId: string | null
     createdAt: Date | null
@@ -4983,6 +5042,7 @@ export namespace Prisma {
     badge: number
     content: number
     published: number
+    order: number
     url: number
     imageId: number
     createdAt: number
@@ -4991,12 +5051,21 @@ export namespace Prisma {
   }
 
 
+  export type BlogPostAvgAggregateInputType = {
+    order?: true
+  }
+
+  export type BlogPostSumAggregateInputType = {
+    order?: true
+  }
+
   export type BlogPostMinAggregateInputType = {
     id?: true
     title?: true
     badge?: true
     content?: true
     published?: true
+    order?: true
     url?: true
     imageId?: true
     createdAt?: true
@@ -5009,6 +5078,7 @@ export namespace Prisma {
     badge?: true
     content?: true
     published?: true
+    order?: true
     url?: true
     imageId?: true
     createdAt?: true
@@ -5021,6 +5091,7 @@ export namespace Prisma {
     badge?: true
     content?: true
     published?: true
+    order?: true
     url?: true
     imageId?: true
     createdAt?: true
@@ -5066,6 +5137,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: BlogPostAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: BlogPostSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: BlogPostMinAggregateInputType
@@ -5096,6 +5179,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: BlogPostCountAggregateInputType | true
+    _avg?: BlogPostAvgAggregateInputType
+    _sum?: BlogPostSumAggregateInputType
     _min?: BlogPostMinAggregateInputType
     _max?: BlogPostMaxAggregateInputType
   }
@@ -5106,11 +5191,14 @@ export namespace Prisma {
     badge: string
     content: string
     published: boolean
+    order: number
     url: string
     imageId: string | null
     createdAt: Date
     updatedAt: Date
     _count: BlogPostCountAggregateOutputType | null
+    _avg: BlogPostAvgAggregateOutputType | null
+    _sum: BlogPostSumAggregateOutputType | null
     _min: BlogPostMinAggregateOutputType | null
     _max: BlogPostMaxAggregateOutputType | null
   }
@@ -5135,6 +5223,7 @@ export namespace Prisma {
     badge?: boolean
     content?: boolean
     published?: boolean
+    order?: boolean
     url?: boolean
     imageId?: boolean
     createdAt?: boolean
@@ -5148,6 +5237,7 @@ export namespace Prisma {
     badge?: boolean
     content?: boolean
     published?: boolean
+    order?: boolean
     url?: boolean
     imageId?: boolean
     createdAt?: boolean
@@ -5160,6 +5250,7 @@ export namespace Prisma {
     badge?: boolean
     content?: boolean
     published?: boolean
+    order?: boolean
     url?: boolean
     imageId?: boolean
     createdAt?: boolean
@@ -5172,13 +5263,14 @@ export namespace Prisma {
     badge?: boolean
     content?: boolean
     published?: boolean
+    order?: boolean
     url?: boolean
     imageId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type BlogPostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "badge" | "content" | "published" | "url" | "imageId" | "createdAt" | "updatedAt", ExtArgs["result"]["blogPost"]>
+  export type BlogPostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "badge" | "content" | "published" | "order" | "url" | "imageId" | "createdAt" | "updatedAt", ExtArgs["result"]["blogPost"]>
   export type BlogPostInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     image?: boolean | BlogPost$imageArgs<ExtArgs>
   }
@@ -5196,6 +5288,7 @@ export namespace Prisma {
       badge: string
       content: string
       published: boolean
+      order: number
       url: string
       imageId: string | null
       createdAt: Date
@@ -5629,6 +5722,7 @@ export namespace Prisma {
     readonly badge: FieldRef<"BlogPost", 'String'>
     readonly content: FieldRef<"BlogPost", 'String'>
     readonly published: FieldRef<"BlogPost", 'Boolean'>
+    readonly order: FieldRef<"BlogPost", 'Int'>
     readonly url: FieldRef<"BlogPost", 'String'>
     readonly imageId: FieldRef<"BlogPost", 'String'>
     readonly createdAt: FieldRef<"BlogPost", 'DateTime'>
@@ -10480,6 +10574,7 @@ export namespace Prisma {
     phone: 'phone',
     hours: 'hours',
     mapUrl: 'mapUrl',
+    order: 'order',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -10507,6 +10602,7 @@ export namespace Prisma {
     badge: 'badge',
     content: 'content',
     published: 'published',
+    order: 'order',
     url: 'url',
     imageId: 'imageId',
     createdAt: 'createdAt',
@@ -10779,6 +10875,7 @@ export namespace Prisma {
     phone?: StringFilter<"Office"> | string
     hours?: StringFilter<"Office"> | string
     mapUrl?: StringFilter<"Office"> | string
+    order?: IntFilter<"Office"> | number
     createdAt?: DateTimeFilter<"Office"> | Date | string
     updatedAt?: DateTimeFilter<"Office"> | Date | string
   }
@@ -10790,6 +10887,7 @@ export namespace Prisma {
     phone?: SortOrder
     hours?: SortOrder
     mapUrl?: SortOrder
+    order?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10804,6 +10902,7 @@ export namespace Prisma {
     phone?: StringFilter<"Office"> | string
     hours?: StringFilter<"Office"> | string
     mapUrl?: StringFilter<"Office"> | string
+    order?: IntFilter<"Office"> | number
     createdAt?: DateTimeFilter<"Office"> | Date | string
     updatedAt?: DateTimeFilter<"Office"> | Date | string
   }, "id">
@@ -10815,11 +10914,14 @@ export namespace Prisma {
     phone?: SortOrder
     hours?: SortOrder
     mapUrl?: SortOrder
+    order?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: OfficeCountOrderByAggregateInput
+    _avg?: OfficeAvgOrderByAggregateInput
     _max?: OfficeMaxOrderByAggregateInput
     _min?: OfficeMinOrderByAggregateInput
+    _sum?: OfficeSumOrderByAggregateInput
   }
 
   export type OfficeScalarWhereWithAggregatesInput = {
@@ -10832,6 +10934,7 @@ export namespace Prisma {
     phone?: StringWithAggregatesFilter<"Office"> | string
     hours?: StringWithAggregatesFilter<"Office"> | string
     mapUrl?: StringWithAggregatesFilter<"Office"> | string
+    order?: IntWithAggregatesFilter<"Office"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Office"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Office"> | Date | string
   }
@@ -10920,6 +11023,7 @@ export namespace Prisma {
     badge?: StringFilter<"BlogPost"> | string
     content?: StringFilter<"BlogPost"> | string
     published?: BoolFilter<"BlogPost"> | boolean
+    order?: IntFilter<"BlogPost"> | number
     url?: StringFilter<"BlogPost"> | string
     imageId?: StringNullableFilter<"BlogPost"> | string | null
     createdAt?: DateTimeFilter<"BlogPost"> | Date | string
@@ -10933,6 +11037,7 @@ export namespace Prisma {
     badge?: SortOrder
     content?: SortOrder
     published?: SortOrder
+    order?: SortOrder
     url?: SortOrder
     imageId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -10949,6 +11054,7 @@ export namespace Prisma {
     badge?: StringFilter<"BlogPost"> | string
     content?: StringFilter<"BlogPost"> | string
     published?: BoolFilter<"BlogPost"> | boolean
+    order?: IntFilter<"BlogPost"> | number
     url?: StringFilter<"BlogPost"> | string
     imageId?: StringNullableFilter<"BlogPost"> | string | null
     createdAt?: DateTimeFilter<"BlogPost"> | Date | string
@@ -10962,13 +11068,16 @@ export namespace Prisma {
     badge?: SortOrder
     content?: SortOrder
     published?: SortOrder
+    order?: SortOrder
     url?: SortOrder
     imageId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: BlogPostCountOrderByAggregateInput
+    _avg?: BlogPostAvgOrderByAggregateInput
     _max?: BlogPostMaxOrderByAggregateInput
     _min?: BlogPostMinOrderByAggregateInput
+    _sum?: BlogPostSumOrderByAggregateInput
   }
 
   export type BlogPostScalarWhereWithAggregatesInput = {
@@ -10980,6 +11089,7 @@ export namespace Prisma {
     badge?: StringWithAggregatesFilter<"BlogPost"> | string
     content?: StringWithAggregatesFilter<"BlogPost"> | string
     published?: BoolWithAggregatesFilter<"BlogPost"> | boolean
+    order?: IntWithAggregatesFilter<"BlogPost"> | number
     url?: StringWithAggregatesFilter<"BlogPost"> | string
     imageId?: StringNullableWithAggregatesFilter<"BlogPost"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"BlogPost"> | Date | string
@@ -11360,6 +11470,7 @@ export namespace Prisma {
     phone: string
     hours: string
     mapUrl: string
+    order?: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11371,6 +11482,7 @@ export namespace Prisma {
     phone: string
     hours: string
     mapUrl: string
+    order?: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11382,6 +11494,7 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     hours?: StringFieldUpdateOperationsInput | string
     mapUrl?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11393,6 +11506,7 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     hours?: StringFieldUpdateOperationsInput | string
     mapUrl?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11404,6 +11518,7 @@ export namespace Prisma {
     phone: string
     hours: string
     mapUrl: string
+    order?: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11415,6 +11530,7 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     hours?: StringFieldUpdateOperationsInput | string
     mapUrl?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11426,6 +11542,7 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     hours?: StringFieldUpdateOperationsInput | string
     mapUrl?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11511,6 +11628,7 @@ export namespace Prisma {
     badge: string
     content: string
     published?: boolean
+    order?: number
     url: string
     imageId?: string | null
     createdAt?: Date | string
@@ -11524,6 +11642,7 @@ export namespace Prisma {
     badge: string
     content: string
     published?: boolean
+    order?: number
     url: string
     imageId?: string | null
     createdAt?: Date | string
@@ -11537,6 +11656,7 @@ export namespace Prisma {
     badge?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
+    order?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11550,6 +11670,7 @@ export namespace Prisma {
     badge?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
+    order?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11563,6 +11684,7 @@ export namespace Prisma {
     badge: string
     content: string
     published?: boolean
+    order?: number
     url: string
     imageId?: string | null
     createdAt?: Date | string
@@ -11575,6 +11697,7 @@ export namespace Prisma {
     badge?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
+    order?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11587,6 +11710,7 @@ export namespace Prisma {
     badge?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
+    order?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -12034,6 +12158,17 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type OfficeCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
@@ -12041,8 +12176,13 @@ export namespace Prisma {
     phone?: SortOrder
     hours?: SortOrder
     mapUrl?: SortOrder
+    order?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+  }
+
+  export type OfficeAvgOrderByAggregateInput = {
+    order?: SortOrder
   }
 
   export type OfficeMaxOrderByAggregateInput = {
@@ -12052,6 +12192,7 @@ export namespace Prisma {
     phone?: SortOrder
     hours?: SortOrder
     mapUrl?: SortOrder
+    order?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -12063,11 +12204,16 @@ export namespace Prisma {
     phone?: SortOrder
     hours?: SortOrder
     mapUrl?: SortOrder
+    order?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type IntFilter<$PrismaModel = never> = {
+  export type OfficeSumOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -12075,7 +12221,12 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type StringNullableFilter<$PrismaModel = never> = {
@@ -12151,22 +12302,6 @@ export namespace Prisma {
     height?: SortOrder
   }
 
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -12196,10 +12331,15 @@ export namespace Prisma {
     badge?: SortOrder
     content?: SortOrder
     published?: SortOrder
+    order?: SortOrder
     url?: SortOrder
     imageId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+  }
+
+  export type BlogPostAvgOrderByAggregateInput = {
+    order?: SortOrder
   }
 
   export type BlogPostMaxOrderByAggregateInput = {
@@ -12208,6 +12348,7 @@ export namespace Prisma {
     badge?: SortOrder
     content?: SortOrder
     published?: SortOrder
+    order?: SortOrder
     url?: SortOrder
     imageId?: SortOrder
     createdAt?: SortOrder
@@ -12220,10 +12361,15 @@ export namespace Prisma {
     badge?: SortOrder
     content?: SortOrder
     published?: SortOrder
+    order?: SortOrder
     url?: SortOrder
     imageId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+  }
+
+  export type BlogPostSumOrderByAggregateInput = {
+    order?: SortOrder
   }
 
   export type DateTimeNullableFilter<$PrismaModel = never> = {
@@ -12525,6 +12671,14 @@ export namespace Prisma {
     deleteMany?: ImageScalarWhereInput | ImageScalarWhereInput[]
   }
 
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type InquiryCreateNestedOneWithoutImagesInput = {
     create?: XOR<InquiryCreateWithoutImagesInput, InquiryUncheckedCreateWithoutImagesInput>
     connectOrCreate?: InquiryCreateOrConnectWithoutImagesInput
@@ -12535,14 +12689,6 @@ export namespace Prisma {
     create?: XOR<BlogPostCreateWithoutImageInput, BlogPostUncheckedCreateWithoutImageInput>
     connectOrCreate?: BlogPostCreateOrConnectWithoutImageInput
     connect?: BlogPostWhereUniqueInput
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type InquiryUpdateOneWithoutImagesNestedInput = {
@@ -12826,20 +12972,6 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type NestedStringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -12865,6 +12997,20 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -13059,6 +13205,7 @@ export namespace Prisma {
     badge: string
     content: string
     published?: boolean
+    order?: number
     url: string
     imageId?: string | null
     createdAt?: Date | string
@@ -13071,6 +13218,7 @@ export namespace Prisma {
     badge: string
     content: string
     published?: boolean
+    order?: number
     url: string
     imageId?: string | null
     createdAt?: Date | string
@@ -13134,6 +13282,7 @@ export namespace Prisma {
     badge?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
+    order?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13146,6 +13295,7 @@ export namespace Prisma {
     badge?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     published?: BoolFieldUpdateOperationsInput | boolean
+    order?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string

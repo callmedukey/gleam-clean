@@ -19,7 +19,7 @@ export default function HeroSection() {
       <div className="flex flex-col items-center justify-center px-4 py-16">
         {/* Main Heading */}
         <motion.div
-          className="flex flex-col items-center gap-2 mb-16 max-w-4xl"
+          // className="flex flex-col items-center gap-2 mb-16 max-w-4xl"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -32,7 +32,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            고객의 공간을 깨끗하고 청결하게 Cleaning for a better tomorrow.
+            고객의 공간을 깨끗하고 청결하게 Cleaning for a better tomorrow
           </motion.h1>
 
           {/* Highlighted Service Line */}

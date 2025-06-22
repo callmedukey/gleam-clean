@@ -1,32 +1,28 @@
 import { Suspense } from "react";
 
-import { getBlogPosts } from "@/app/(admin)/admin/notices/query/blogs.query";
+import { 
+  getBlogPostsPaginated, 
+  getBlogPostsCount 
+} from "@/app/(admin)/admin/notices/query/blogs.query";
 import { Skeleton } from "@/components/ui/skeleton";
 
-import { BlogListItem } from "./blog-list-item";
+import { BlogListWrapper } from "./blog-list-wrapper";
 
 async function BlogListContent() {
-  const blogPosts = await getBlogPosts();
+  const [initialPosts, totalCount] = await Promise.all([
+    getBlogPostsPaginated(1, 9),
+    getBlogPostsCount(),
+  ]);
 
-  if (blogPosts.length === 0) {
-    return (
-      <div className="text-center py-8">
-        <p className="text-muted-foreground">
-          등록된 블로그 포스트가 없습니다.
-        </p>
-        <p className="text-sm text-muted-foreground mt-1">
-          새 포스트를 추가해보세요.
-        </p>
-      </div>
-    );
-  }
+  const totalPages = Math.ceil(totalCount / 9);
+  const hasMorePages = totalPages > 1;
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {blogPosts.map((blogPost) => (
-        <BlogListItem key={blogPost.id} blogPost={blogPost} />
-      ))}
-    </div>
+    <BlogListWrapper
+      initialPosts={initialPosts}
+      totalPages={totalPages}
+      hasMorePages={hasMorePages}
+    />
   );
 }
 

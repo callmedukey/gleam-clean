@@ -44,16 +44,18 @@ const BlogLoadingSkeleton = () => {
 // Blog content component that handles data fetching
 const BlogContent = async () => {
   const [initialPosts, totalCount] = await Promise.all([
-    getPublishedBlogPostsWithLimit(20),
+    getPublishedBlogPostsWithLimit(9),
     getPublishedBlogPostsCount(),
   ]);
 
-  const hasMorePosts = totalCount > 20;
+  const totalPages = Math.ceil(totalCount / 9);
+  const hasMorePages = totalPages > 1;
 
   return (
     <BlogContentWrapper
       initialPosts={initialPosts}
-      hasMorePosts={hasMorePosts}
+      totalPages={totalPages}
+      hasMorePages={hasMorePages}
     />
   );
 };

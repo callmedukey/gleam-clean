@@ -26,7 +26,7 @@ const featuresData: FeatureCard[] = [
   {
     title: "흠잡을 수 없는 맞춤형 꼼꼼함",
     description:
-      "입주청소는 단순히 닦는 것이 아닙니다. 저희는 고객님의 집 구조, 자재 (예: 대리석, 강화마루, 유리 등), 오염도에 맞춰 <span class='text-accent font-bold'>맞춤형 청소 플랜</span>을 수립하고, 창틀 하나, 문틈 하나까지 <span class='text-accent font-bold'>흠잡을 데 없이 꼼꼼하게</span> 마무리합니다. 특히 고객의 주요 관심 구역(욕실, 주방, 창문 등)은 이중 체크로 더 확실하게 관리합니다",
+      "입주청소는 단순히 닦는 것이 아닙니다. 저희는 고객님의 집 구조, 자재 (예: 대리석, 강화마루, 유리 등), 오염도에 맞춰 <span class='text-accent font-bold'>맞춤형 청소 플랜</span>을 수립하고, 창틀 하나, 문틈 하나까지 <span class='text-accent font-bold'>흠잡을 데 없이 꼼꼼하게</span> 마무리합니다. 특히 고객의 주요 관심 구역(욕실, 주방, 창문 등)은 이중 체크로 더 확실하게 관리합니다.",
     backgroundImage: feature1Bg,
     items: [
       {

@@ -6,6 +6,7 @@ export const createOfficeSchema = z.object({
   phone: z.string().min(1, "전화번호는 필수입니다"),
   hours: z.string().min(1, "운영시간은 필수입니다"),
   mapUrl: z.string().url("올바른 지도 URL을 입력해주세요"),
+  order: z.number().int().min(0).default(0),
 });
 
 export const updateOfficeSchema = createOfficeSchema.extend({

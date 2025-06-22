@@ -5,9 +5,10 @@ import { prisma } from "@/prisma/prisma-client";
 export async function getOffices() {
   try {
     const offices = await prisma.office.findMany({
-      orderBy: {
-        createdAt: "desc",
-      },
+      orderBy: [
+        { order: "asc" },
+        { createdAt: "desc" },
+      ],
     });
 
     return offices;

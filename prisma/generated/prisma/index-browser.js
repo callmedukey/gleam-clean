@@ -139,6 +139,7 @@ exports.Prisma.OfficeScalarFieldEnum = {
   phone: 'phone',
   hours: 'hours',
   mapUrl: 'mapUrl',
+  order: 'order',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -160,6 +161,7 @@ exports.Prisma.BlogPostScalarFieldEnum = {
   badge: 'badge',
   content: 'content',
   published: 'published',
+  order: 'order',
   url: 'url',
   imageId: 'imageId',
   createdAt: 'createdAt',

@@ -11,9 +11,9 @@ export default function BlogsPage() {
     <div className="container mx-auto py-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">블로그 관리</h1>
+          <h1 className="text-2xl font-bold tracking-tight">게시판 관리</h1>
           <p className="text-muted-foreground">
-            블로그 포스트를 관리하고 편집할 수 있습니다.
+            게시판을 관리하고 편집할 수 있습니다.
           </p>
         </div>
         <BlogFormDialog

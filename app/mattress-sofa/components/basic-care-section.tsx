@@ -94,7 +94,7 @@ const BasicCareSection = () => {
               </h3>
               <p className="text-sm sm:text-base text-text-primary mb-8 leading-[1.6]">
                 글림케어는 업계 최고의 진공청소기로 건식 케어 서비스를
-                제공합니다
+                제공합니다.
               </p>
 
               <div className="space-y-4">

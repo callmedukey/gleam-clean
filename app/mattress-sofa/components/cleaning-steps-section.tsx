@@ -21,7 +21,7 @@ const CleaningStepsSection = () => {
       subtitle:
         "흡입력 끝판왕 <span class='text-accent'>'컬비 어벨리어2'</span>",
       description:
-        "글림케어는 업계 최고의 진공청소기로 건식 케어 서비스를 제공합니다",
+        "글림케어는 업계 최고의 진공청소기로 건식 케어 서비스를 제공합니다.",
       features: [
         "육안으로 보이지 않는 미세먼지, 집먼지진드를 깨끗이 제거",
         "먼지 재배출 NO, EN1822 11등급의 헤파필터",
@@ -52,7 +52,7 @@ const CleaningStepsSection = () => {
       title: "스팀 프리미엄 케어",
       subtitle: "초강력 고온 <span class='text-accent'>'카처 SG 4/2'</span>",
       description:
-        "글림케어는 업계 최고의 스팀청소기로 완성도 높은 서비스를 제공합니다",
+        "글림케어는 업계 최고의 스팀청소기로 완성도 높은 서비스를 제공합니다.",
       features: [
         "Vapo Hydro 기능으로 100℃ 고온 스팀을 분사",
         "화학 세제 없이 99.99%의 강력한 살균 및 소독 효과",
@@ -70,7 +70,7 @@ const CleaningStepsSection = () => {
       subtitle:
         "습식 클리닝의 기준 <span class='text-accent'>'카처퍼지 1/10'</span>",
       description:
-        "글림케어는 업계 최고의 습식청소기로 먼지와 오물을 확실히 제거합니다",
+        "글림케어는 업계 최고의 습식청소기로 먼지와 오물을 확실히 제거합니다.",
       features: [
         "적은 물로 세척하고, 신속한 건조로 시간 절약",
         "가구 표면에 완전히 밀착해 잔여물 없이 깔끔하게 세척",

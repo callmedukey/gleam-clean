@@ -107,7 +107,7 @@ const PremiumCareSection = () => {
                   </h3>
                   <p className="text-[#2D3E50] text-base leading-[1.6]">
                     글림케어는 업계 최고의 스팀청소기로 완성도 높은 서비스를
-                    제공합니다
+                    제공합니다.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
@@ -174,7 +174,7 @@ const PremiumCareSection = () => {
                   </h3>
                   <p className="text-[#2D3E50] text-base leading-[1.6]">
                     글림케어는 업계 최고의 습식청소기로 먼지와 오물을 확실히
-                    제거합니다
+                    제거합니다.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">

@@ -5,6 +5,7 @@ export interface Office {
   phone: string;
   hours: string;
   mapUrl: string;
+  order: number;
   createdAt: Date;
   updatedAt: Date;
 }

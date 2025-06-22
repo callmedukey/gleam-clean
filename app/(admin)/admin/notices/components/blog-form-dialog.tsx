@@ -34,6 +34,7 @@ interface FormData {
   content: string;
   url: string;
   published: boolean;
+  order: number;
   image?: File;
 }
 
@@ -51,6 +52,7 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
     content: blogPost?.content || "",
     url: blogPost?.url || "",
     published: blogPost?.published || false,
+    order: blogPost?.order || 0,
   });
 
   const handleInputChange = (
@@ -150,6 +152,7 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
         submitFormData.append("content", formData.content);
         submitFormData.append("url", formData.url);
         submitFormData.append("published", formData.published.toString());
+        submitFormData.append("order", formData.order.toString());
 
         if (formData.image) {
           submitFormData.append("image", formData.image);
@@ -172,6 +175,7 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
           content: "",
           url: "",
           published: false,
+          order: 0,
         });
         setImagePreview(null);
         setErrors({});
@@ -196,6 +200,7 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
         content: "",
         url: "",
         published: false,
+        order: 0,
       });
       setImagePreview(null);
     } else {
@@ -205,14 +210,33 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
         content: blogPost.content,
         url: blogPost.url,
         published: blogPost.published,
+        order: blogPost.order,
       });
       setImagePreview(blogPost.image?.url || null);
     }
     setErrors({});
   };
 
+  const handleOpenChange = (newOpen: boolean) => {
+    if (newOpen) {
+      // Reset form data when opening
+      if (blogPost) {
+        setFormData({
+          title: blogPost.title,
+          badge: blogPost.badge,
+          content: blogPost.content,
+          url: blogPost.url,
+          published: blogPost.published,
+          order: blogPost.order,
+        });
+        setImagePreview(blogPost.image?.url || null);
+      }
+    }
+    setOpen(newOpen);
+  };
+
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
@@ -286,6 +310,25 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
             {errors.content && (
               <p className="text-sm text-red-600">{errors.content[0]}</p>
             )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="order">순서</Label>
+            <Input
+              id="order"
+              name="order"
+              type="number"
+              placeholder="0"
+              value={formData.order}
+              onChange={(e) => {
+                const value = parseInt(e.target.value) || 0;
+                setFormData(prev => ({ ...prev, order: value }));
+              }}
+              disabled={isPending}
+            />
+            <p className="text-sm text-muted-foreground">
+              낮은 숫자가 먼저 표시됩니다
+            </p>
           </div>
 
           <div className="space-y-2">

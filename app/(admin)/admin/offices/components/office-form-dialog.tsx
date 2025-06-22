@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
 import { createOffice, updateOffice } from "@/actions/office.action";
@@ -45,6 +45,7 @@ export function OfficeFormDialog({ office, trigger }: OfficeFormDialogProps) {
           phone: office.phone,
           hours: office.hours,
           mapUrl: office.mapUrl,
+          order: office.order,
         }
       : {
           name: "",
@@ -52,6 +53,7 @@ export function OfficeFormDialog({ office, trigger }: OfficeFormDialogProps) {
           phone: "",
           hours: "",
           mapUrl: "",
+          order: 0,
         },
   });
 
@@ -74,6 +76,20 @@ export function OfficeFormDialog({ office, trigger }: OfficeFormDialogProps) {
       }
     });
   };
+
+  // Reset form when dialog opens with office data
+  useEffect(() => {
+    if (open && office) {
+      reset({
+        name: office.name,
+        address: office.address,
+        phone: office.phone,
+        hours: office.hours,
+        mapUrl: office.mapUrl,
+        order: office.order,
+      });
+    }
+  }, [open, office, reset]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -142,6 +158,22 @@ export function OfficeFormDialog({ office, trigger }: OfficeFormDialogProps) {
             {errors.mapUrl && (
               <p className="text-sm text-red-500">{errors.mapUrl.message}</p>
             )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="order">순서</Label>
+            <Input
+              id="order"
+              type="number"
+              {...register("order", { valueAsNumber: true })}
+              placeholder="0"
+            />
+            {errors.order && (
+              <p className="text-sm text-red-500">{errors.order.message}</p>
+            )}
+            <p className="text-sm text-muted-foreground">
+              낮은 숫자가 먼저 표시됩니다
+            </p>
           </div>
 
           <div className="flex justify-end space-x-2">

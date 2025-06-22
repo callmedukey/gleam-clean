@@ -91,24 +91,21 @@ const processSteps: ProcessStep[] = [
   {
     number: "09",
     title: "미립자 소독",
-    description:
-      "미세 입자 소독제를 분사하여 섬유 속 곰팡이와 바이러스를 완벽하게 박멸",
+    description: "미세 입자 소독제를 분사하여 섬유 속 곰팡이와 바이러스를 박멸",
     type: "basic",
     icon: sprayGunIcon,
   },
   {
     number: "10",
     title: "피톤치드 방역",
-    description:
-      "피톤치드 방역을 활용하여 항균, 탈취 효과 등 주변 환경을 깨끗하게 정화",
+    description: "피톤치드 방역을 활용하여 항균, 탈취 효과 등 주변 환경을 정화",
     type: "basic",
     icon: leafIcon,
   },
   {
     number: "11",
     title: "결과 및 관리법 안내",
-    description:
-      "1500배율 현미경으로 집 먼지 진드기 확인 (요청 시) 및 관리법 설명",
+    description: "1500배율 현미경으로 진드기 확인 (요청 시) 및 관리법 설명",
     type: "basic",
     icon: resultsIcon,
   },

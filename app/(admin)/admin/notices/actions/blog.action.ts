@@ -15,6 +15,7 @@ export async function createBlogPost(formData: FormData) {
     const content = formData.get("content") as string;
     const url = formData.get("url") as string;
     const published = formData.get("published") === "true";
+    const order = parseInt(formData.get("order") as string) || 0;
     const imageFile = formData.get("image") as File | null;
 
     // Check if URL already exists
@@ -64,6 +65,7 @@ export async function createBlogPost(formData: FormData) {
         content,
         url,
         published,
+        order,
         ...(imageData && {
           image: {
             create: imageData,
@@ -90,6 +92,7 @@ export async function updateBlogPost(formData: FormData) {
     const content = formData.get("content") as string;
     const url = formData.get("url") as string;
     const published = formData.get("published") === "true";
+    const order = parseInt(formData.get("order") as string) || 0;
     const imageFile = formData.get("image") as File | null;
 
     // Check if URL already exists for other posts
@@ -143,6 +146,7 @@ export async function updateBlogPost(formData: FormData) {
         content,
         url,
         published,
+        order,
         ...(imageData && {
           image: {
             upsert: {

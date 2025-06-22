@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import InquiryDialog from "@/app/components/inquiry-dialog";
 import BlogIcon from "@/public/icons/jt-naver-blog.svg";
+import KakaoIcon from "@/public/icons/sns_kakao.svg";
 import YoutubeIcon from "@/public/icons/sns_youtube.svg";
 import LogoFooter from "@/public/images/logo-footer.png";
 
@@ -122,15 +123,18 @@ const Footer = () => {
                   />
                 </Link>
 
-                {/* KakaoTalk */}
-                {/* <Link href="/" className="w-8 h-8 lg:w-10 lg:h-10">
+                <Link
+                  href="http://pf.kakao.com/_NxhKan/chat"
+                  target="_blank"
+                  className="w-8 h-8 lg:w-10 lg:h-10"
+                >
                   <Image
                     src={KakaoIcon}
                     alt="Kakao"
                     className="w-full h-full"
                     unoptimized
                   />
-                </Link> */}
+                </Link>
 
                 {/* YouTube */}
                 <Link
