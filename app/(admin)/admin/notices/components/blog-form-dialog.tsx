@@ -170,7 +170,6 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
         }
 
         setOpen(false);
-        router.refresh();
         // Reset form
         setFormData({
           title: "",
@@ -182,6 +181,9 @@ export function BlogFormDialog({ trigger, blogPost }: BlogFormDialogProps) {
         });
         setImagePreview(null);
         setErrors({});
+        
+        // Refresh the router after dialog closes to ensure data is refreshed
+        router.refresh();
       } catch (error) {
         console.error(error);
         toast.error(

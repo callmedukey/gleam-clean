@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { OfficeFormDialog } from "./components/office-form-dialog";
 import { OfficeList } from "./components/office-list";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function OfficesPage() {
   return (
     <div className="container mx-auto py-6 space-y-6">

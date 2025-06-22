@@ -7,6 +7,7 @@ import { BlogFormDialog } from "./components/blog-form-dialog";
 import { BlogList } from "./components/blog-list";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default function BlogsPage() {
   return (

@@ -21,6 +21,7 @@ export async function createOffice(data: CreateOfficeInput) {
     });
 
     revalidatePath("/admin/offices");
+    revalidatePath("/offices");
 
     return {
       success: true,
@@ -47,6 +48,7 @@ export async function updateOffice(data: UpdateOfficeInput) {
     });
 
     revalidatePath("/admin/offices");
+    revalidatePath("/offices");
 
     return {
       success: true,
@@ -71,6 +73,7 @@ export async function deleteOffice(data: DeleteOfficeInput) {
     });
 
     revalidatePath("/admin/offices");
+    revalidatePath("/offices");
 
     return {
       success: true,

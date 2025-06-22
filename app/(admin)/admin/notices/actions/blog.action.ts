@@ -4,7 +4,7 @@ import { existsSync, mkdirSync } from "fs";
 import { writeFile } from "fs/promises";
 import { join } from "path";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 import { prisma } from "@/prisma/prisma-client";
 
@@ -76,6 +76,8 @@ export async function createBlogPost(formData: FormData) {
 
     revalidatePath("/admin/notices");
     revalidatePath("/blog");
+    revalidateTag("blog-posts");
+    revalidateTag("blog-posts");
 
     return blogPost;
   } catch (error) {
@@ -160,6 +162,7 @@ export async function updateBlogPost(formData: FormData) {
 
     revalidatePath("/admin/notices");
     revalidatePath("/blog");
+    revalidateTag("blog-posts");
 
     return blogPost;
   } catch (error) {
@@ -176,6 +179,7 @@ export async function deleteBlogPost(id: string) {
 
     revalidatePath("/admin/notices");
     revalidatePath("/blog");
+    revalidateTag("blog-posts");
   } catch (error) {
     console.error("블로그 포스트 삭제 오류:", error);
     throw new Error("블로그 포스트 삭제에 실패했습니다");
@@ -201,6 +205,7 @@ export async function toggleBlogPostPublished(id: string) {
 
     revalidatePath("/admin/notices");
     revalidatePath("/blog");
+    revalidateTag("blog-posts");
 
     return updatedPost;
   } catch (error) {

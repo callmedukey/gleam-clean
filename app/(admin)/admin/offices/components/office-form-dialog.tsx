@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
@@ -30,6 +31,7 @@ interface OfficeFormDialogProps {
 export function OfficeFormDialog({ office, trigger }: OfficeFormDialogProps) {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const {
     register,
@@ -61,6 +63,7 @@ export function OfficeFormDialog({ office, trigger }: OfficeFormDialogProps) {
         if (result.success) {
           setOpen(false);
           reset();
+          router.refresh();
         }
       } catch (error) {
         console.error("폼 제출 오류:", error);
